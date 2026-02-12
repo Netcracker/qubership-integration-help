@@ -33,7 +33,7 @@ On this tab user can set the endpoint parameters by which chain could be trigger
 
 ### "Validate request" Tab
 The tab "Validate request" is responsible for choosing JSON schema for incoming request message validation. There are next elements available on this tab:
-- **Reject request if body is not empty for GET and DELETE methods** checkbox - if checked, system will handle missing body in the request of mentioned methods as validation failure.
+- **Reject11111111111111111 request if body is not empty for GET and DELETE methods** checkbox - if checked, system will handle missing body in the request of mentioned methods as validation failure.
 - **Allowed Content Types** - list of allowed content types in request. If nothing is specified - every content type is allowed.
 - **Scheme** box - allows to enter a scheme to validate the request against it.
 
