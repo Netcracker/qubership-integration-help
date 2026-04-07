@@ -1,8 +1,6 @@
 # Access Control
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -20,7 +18,7 @@ Tab "Access Control" contains a table, representing the unique endpoint, that is
 - **Access Control Type** - specifies the type of access configured for the HTTP Trigger (_RBAC/ABAC/NONE_).
 - **Roles/Resource** - list of roles, configured for HTTP Trigger. Applicable to display list of roles (as blue chips) only for _RBAC_ access control type; for _NONE/ABAC_ - displayed as hyphen (-).
 - **Attributes** - set of applied parameters for attribute based access control endpoint (chain) configuration. Applicable to display parameters only for _ABAC_ access control type; for _NONE/RBAC_ - displayed as hyphen (-).
-    >**ℹ️Note**: Click <span style="color: blue;">"Details"</span> reference on the respective row to open popover with ABAC parameters (*Operation*, *Resource Type* and *Resource/Resource Map*) in read-only mode.
+    > ℹ️ **Note:** Click **"Details"** reference on the respective row to open popover with ABAC parameters (*Operation*, *Resource Type* and *Resource/Resource Map*) in read-only mode.
 - **Chain** - name of the chain, that exposes the endpoint. Navigates to the chain by click.
 - **Chain Status** - current status of the related chain.
 

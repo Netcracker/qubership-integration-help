@@ -1,8 +1,7 @@
 # Logging [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
+
 ## Description
 
 ---
@@ -25,7 +24,7 @@ User is able to navigate to the **"Logging Settings"** tab under the chain and v
     - **Info** - only completed inbound/outbound communications, as well as failed sessions are going to be logged. When mentioned elements are part of sub-chain(s), session will also contain Chain Call(s) to maintain proper structure. This level of logging has medium affect on performance in general, as well as on memory and storage capacity consumption.
     - **Debug** - all available parameters will be logged: session status, status of each chain element, headers, body (request and response). This level of logging _drastically_ increases the consumption of memory and storage capacity, as well as negatively affects the performance in general, hence shall be used carefully.
 
->ℹ️**Note:**  You can also log a particular transaction with a **Debug** session level by sending **"TraceMe"** header with "true" value in the HTTP request, which will make all available session parameters logged at **Debug level**, regardless of the current state of chain's logging settings.
+> ℹ️ **Note:** You can also log a particular transaction with a **Debug** session level by sending **"TraceMe"** header with "true" value in the HTTP request, which will make all available session parameters logged at **Debug level**, regardless of the current state of chain's logging settings.
 
 - **Log Level** - supported log levels. For proper logging, it should not be higher than logging level, globally specified for microservice. Possible values:
     - **Error** _(Default value)_ - logging of Integrations with Exceptions. Log levels - ERROR, FATAL.

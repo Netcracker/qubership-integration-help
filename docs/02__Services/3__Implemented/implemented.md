@@ -15,9 +15,7 @@ There are 2 options to configure the Implemented Service:
 
 ### View Implemented Services
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 Table with Implemented services is accessible by navigating to **Services** → **Implemented** tab. Next columns and elements are available for the table:
 
@@ -147,9 +145,7 @@ When specification is clicked, system opens new page with the table of available
 
 ### Add Implemented Service
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 To add new implemented service, click **"Create service"** button marked with ![Plus|20](img/plus.svg)  via action menu marked with ![More|20](img/more.svg) on the bottom right of the screen. Specify service name and description on a newly opened pop-up and click "**Create**" button. System opens new window with three tabs:
 - **Parameters**
@@ -172,10 +168,10 @@ To add specification group to Implemented service:
 3. There are two options to add API Specification:
     - **Import File** - on this tab you can import file with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
 	- **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
->ℹ️**Note:** Via checkbox ***"External routes only"*** it is possible to control showing only respective [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) in the list.
+> ℹ️ **Note:** Via checkbox ***"External routes only"*** it is possible to control showing only respective [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) in the list.
 
 
->ℹ️**Note:** Via checkbox "External routes only" it is possible to control showing only respective
+> ℹ️ **Note:** Via checkbox "External routes only" it is possible to control showing only respective
 4. Confirm operation with **"Create"** button.
 
 When API specification is added you will see the specification group with respective name and dates. All specifications will be placed under this specification group.
@@ -186,10 +182,10 @@ To add API specification into existing specification group:
 1. Select ![Upload|20](img/cloud-upload.svg) "**Import Specifications**" option for desired group.
 2. There are two options to add API Specification:
     - **Import File** - on this tab you can import file with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
-	>ℹ️**Note:** API Specification **version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.
+	> ℹ️ **Note:** API Specification **version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.
 	
     - **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
-    >ℹ️**Note:** Checked ***"External routes only"*** parameter allows to create specification only from chains with external [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md).
+    > ℹ️ **Note:** Checked ***"External routes only"*** parameter allows to create specification only from chains with external [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md).
 1. Confirm operation with **"Create"** button.
 
 ### Add Environment
@@ -214,9 +210,10 @@ Below you can find the detailed information of all available parameters for the 
 - **Properties** - section to manage properties for the environment:
     - To add new property, click the icon ![Caret down|20](img/caret-down.svg) near the section **"Properties"**, press button ![Plus|20](img/plus.svg), enter suitable data and click **Save** button.
     - To bulk create/update of environment properties, turn on the slider **"Show as Key Value"**, put pairs of property name and value and click **`Enter`**. See the format below:
-      <pre style="background-color: #F5F5F7"><code style="color: #000000">property1_name=property1_value;
+      ```
+      property1_name=property1_value;
       property2_name=property2_value;
-      </code></pre>
+      ```
 
 Default properties are described below:
 
@@ -241,11 +238,9 @@ When environment is saved, its updated card will be available under the environm
 
 ### Import Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
-To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. API Specification version in archive <font color="#fa0000">**must be unique**</font> for each API Specification. During the import, system follows next logic:
+To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. API Specification version in archive **must be unique** for each API Specification. During the import, system follows next logic:
 - Verify Import Instructions, saved in the system. Proceed with the step below only if they exist:
     - Fetch the list of service ids with **ignore** action and skip import process for them.
 - Find existing services, specification groups and specification by ids from import archive:
@@ -253,18 +248,12 @@ To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), dra
     - If system already has entities with ids, specified in import archive:
         - Merge data from archive, including **custom labels**, into existing entities.
         - Technical labels are going to be removed from existing entities if they are updated as a part of import process.
->ℹ️**Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
-<ul>
-  <ul>
-    <li>Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specifics:</li>
-      <ul>
-        <li>For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.</li>
-        <li>For <b>Swagger</b> system will build specification version from "version" parameter in specification file.</li>
-      </ul>
-  </ul>
-</ul>
+> ℹ️ **Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
+- Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specifics:
+    - For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
+    - For **Swagger** system will build specification version from "version" parameter in specification file.
 
->⚠️**Warning:** When importing **grpc** services, it is absolutely required to have protobuf files roperly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
+> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files roperly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
 
 When import is completed, system displays import result table with the following columns:
 
@@ -278,9 +267,7 @@ When import is completed, system displays import result table with the following
 
 ### Export Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 System allows to export service with all its API specifications, environments and sources. From **"External Services"** page - mark specific services with checkboxes and click ![Download|20](img/cloud-download.svg) **Export**. Or simply click this button to export all services at once after confirmation.
 
@@ -289,5 +276,5 @@ System allows to export service with all its API specifications, environments an
 ---
 
 Please consider next constraints:
-- When implemented service is being created from HTTP Trigger element, it (trigger) <b>must</b> have a <b>single HTTP method</b> configured in the settings. Otherwise, creation will fail with error.
+- When implemented service is being created from HTTP Trigger element, it (trigger) **must** have a **single HTTP method** configured in the settings. Otherwise, creation will fail with error.
 - **Technical** labels  be imported via UI or exported.

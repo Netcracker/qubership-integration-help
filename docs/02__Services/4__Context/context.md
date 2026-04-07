@@ -4,7 +4,7 @@
 ---
 Context Services are being used as a temporary storage of chain contexts. Chain context lifetime is limited and configurable, please check [Context Storage](../../01__Chains/1__Graph/1__QIP_Elements_Library/4__Services/1__Context_Storage/context_storage.md) to get more details.
 
->⚠️**Warning**: Context services **shall NOT be used** to store/manage sensitive data.
+> ⚠️ **Warning:** Context services **shall NOT be used** to store/manage sensitive data.
 
 ## User Interface
 
@@ -12,9 +12,7 @@ Context Services are being used as a temporary storage of chain contexts. Chain 
 
 ### View Context Services
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 Table with **Context** services is accessible by navigating to **Services** → **Context** tab. Next columns and elements are available for the table:
 
@@ -52,9 +50,7 @@ For _Web UI_ there are some additional information:
 
 ### Add Context Service
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 To add new context service, click **"Create"** button marked with ![Plus|20](img/plus.svg).  Specify service name, description and labels on a newly opened pop-up and then click **"Create"**. System opens new window with the **"Parameters"** tab:
 - **Name** - mandatory service name.
@@ -65,9 +61,7 @@ Specify the required fields and click **"Save"**. Notification about successful 
 
 ### Import Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. During the import, system follows next logic:
 - Verify Import Instructions, saved in the system. Proceed with the step below only if they exist:
@@ -76,12 +70,8 @@ To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), dra
   - If system already has entities with ids, specified in import archive:
     - Merge data from archive, including **custom labels**, into existing entities.
     - **Technical labels** are going to be removed from existing entities if they are updated as a part of import process.
->ℹ️**Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
-<ul>
-  <ul>
-    <li>Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specific: for all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.</li>
-  </ul>
-</ul>
+> ℹ️ **Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
+- Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specific: for all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
 
 When import is completed, system displays import result table with the following columns:
 - **Name** - name of the service participated in import operation.
@@ -94,9 +84,7 @@ When import is completed, system displays import result table with the following
 
 ### Export Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 System allows exporting service. There are two possible ways to export service(s):
 - From **"Context Services"** page - mark specific services with checkboxes and click ![Download|20](img/cloud-download.svg) (Export).

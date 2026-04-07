@@ -1,8 +1,6 @@
 # Import Instructions [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -30,7 +28,7 @@ After navigation to "Import Instructions" tab, system initially displays a table
 - **Action** - editable value, describes the action, that will be taken during entity import process. List of available values:
 	- **Ignore** - specified entity will be ignored. Applicable for Chains, Services and Common Variables.
 	- **Override** - specified chain is going to be overridden by another one. Applicable only for the Chains section. Overridden chain will receive all changes from import archive without snapshot creation and be undeployed. Applicable for Chains only.
->**ℹ️Note**: **"Delete"** action cannot be configured via UI. It is only possible to specify entities, that are going to be removed as the result of the import, via **import instruction file**. The file itself must be specifically named as **qip-import-instructions.yaml**.
+> ℹ️ **Note:** **"Delete"** action cannot be configured via UI. It is only possible to specify entities, that are going to be removed as the result of the import, via **import instruction file**. The file itself must be specifically named as **qip-import-instructions.yaml**.
 - **Overridden By** - editable value, applicable only for "Override" action. It specifies id of the chain, that is going to override the original chain. That becomes clickable when respective chain exist in QIP. It is possible to see the full name of the chain by hovering the mouse over the id, when it is transformed to the reference.
 - **Labels** - list of colored **technical labels**, optional populated during import instructions upload via API.
 - **Modified At** - date and time of the last entity modification.
@@ -60,31 +58,32 @@ To delete desired import instruction(s), select all suitable rows in the table v
 To upload import instructions via UI capabilities, press button ![20](img/cloud-upload.svg), drag and drop appropriate **YAML** file to the drop area, or use "**browse**" option instead, and press "**Upload**" button.
 
 YAML file sample:
-<pre style="background-color: #F5F5F7">
-<code style="color: #000000">chains:</code>
-<code style="color: #000000">  delete:</code>
-<code style="color: #000000">    - "dd1cb5a6-ada9-44cb-b55d-da1fd97c1faa"                 #chain_id1</code>
-<code style="color: #000000">  override:</code>
-<code style="color: #000000">    - id: "e11350f6-178c-423c-8665-18c23b9e7e69"             #original_chain_id</code>
-<code style="color: #000000">    overriddenBy: "f9b41719-e7b1-4f2b-99b6-5899bebb858b"     #new_chain_id</code>
-<code style="color: #000000">  ignore: []</code>
-<code style="color: #000000">services:</code>
-<code style="color: #000000">  delete:</code>
-<code style="color: #000000">    - "886e6f89-b744-4899-8f2d-060355c3e6b5"                 #service_id1</code>
-<code style="color: #000000">  ignore:</code>
-<code style="color: #000000">    - "opportunity-management-core-service2"                 #service_id2</code>
-<code style="color: #000000">specificationGroups:</code>
-<code style="color: #000000">  delete:</code>
-<code style="color: #000000">    - "abe2dc0d-bca3-40b4-b95d-1ce2f4c9c82c"                 #specification_group_id1</code>
-<code style="color: #000000">specifications:</code>
-<code style="color: #000000">  delete:</code>
-<code style="color: #000000">    - "46e85173-2440-4237-ba66-4fc9c00e370e"                 #specification_id1</code>
-<code style="color: #000000">commonVariables:</code>
-<code style="color: #000000">  delete:</code>
-<code style="color: #000000">    - "customerId"                                           #variable_name1</code>
-<code style="color: #000000">  ignore:</code>
-<code style="color: #000000">    - "RETAIL_PARTNER_ID"                                    #variable_name2</code>
-</pre>
+
+```yaml
+chains:
+  delete:
+    - "dd1cb5a6-ada9-44cb-b55d-da1fd97c1faa"                 #chain_id1
+  override:
+    - id: "e11350f6-178c-423c-8665-18c23b9e7e69"             #original_chain_id
+    overriddenBy: "f9b41719-e7b1-4f2b-99b6-5899bebb858b"     #new_chain_id
+  ignore: []
+services:
+  delete:
+    - "886e6f89-b744-4899-8f2d-060355c3e6b5"                 #service_id1
+  ignore:
+    - "opportunity-management-core-service2"                 #service_id2
+specificationGroups:
+  delete:
+    - "abe2dc0d-bca3-40b4-b95d-1ce2f4c9c82c"                 #specification_group_id1
+specifications:
+  delete:
+    - "46e85173-2440-4237-ba66-4fc9c00e370e"                 #specification_id1
+commonVariables:
+  delete:
+    - "customerId"                                           #variable_name1
+  ignore:
+    - "RETAIL_PARTNER_ID"                                    #variable_name2
+```
 
 Before further processing system shows confirmation dialog. When operation is confirmed, system performs the next steps:
 

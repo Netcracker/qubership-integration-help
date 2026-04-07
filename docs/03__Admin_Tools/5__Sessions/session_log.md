@@ -1,8 +1,6 @@
 # Sessions [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -31,14 +29,14 @@ Table contains sessions, aggregated by correlation identifier, if it is availabl
 - **Engine** - name of the session engine domain with pod address (without port) in parentheses.
 - **Control panel** - panel, placed on the right bottom marked with ![More|20](img/more.svg) of the table. Provides next capabilities:
 	- **Search field** - search box, provides ability to find particular session(s) by body field name, body field value, header name or header value.
-	>	**ℹ️Note**: When searching for long or complex entity name, please consider specifying its **full name** or **first part of the name** for proper search result.
+	> ℹ️ **Note:** When searching for long or complex entity name, please consider specifying its **full name** or **first part of the name** for proper search result.
 
 	- ![Delete|20](img/delete.svg) - deletes selected session(s).
 	- ![Download|20](img/cloud-download.svg) - exports selected sessions.
 	- ![Upload|20](img/cloud-upload.svg) - opens pop-up for session import.
 	- ![Redo|20](img/redo.svg) - refreshes session table.
 
->**ℹ️Note**: Imported sessions will be highlighted in the table. For such sessions, references to the chain and chain elements won't be available.
+> ℹ️ **Note:** Imported sessions will be highlighted in the table. For such sessions, references to the chain and chain elements won't be available.
 
 Additionally at the top of the table there is search box providing ability to find particular session(s) by body field name, body field value, header name or header value.
 
@@ -64,7 +62,7 @@ Next information is available, when element's name clicked and window with its d
 - **Previous/Next** buttons - navigation buttons, that allow to open previous or next session element.
 - **Body** tab - contains before/after states of request body, participated in the processing.
 - **Headers** tab - contains the list of headers and their before/after values. Slider **"Only modified"** filters out unmodified headers.
-    >ℹ️**Note**: For **HTTP Sender** and **Service Call** header **"CamelHttpUri"** will contain full URI, with resource and query parameters in it.
+    > ℹ️ **Note:** For **HTTP Sender** and **Service Call** header **"CamelHttpUri"** will contain full URI, with resource and query parameters in it.
 - **Exchange properties** tab - contains list of exchange properties. There are specific properties, available for failed elements in sessions, please refer to the [Building Logic Around Failed Elements](../../00__Overview/6__Building_Logic_Around_Failed_Elements/failed_elements_logic.md) article for more details.
 - **Technical context** tab - contains the list of context headers, that has been received by the chain.
 

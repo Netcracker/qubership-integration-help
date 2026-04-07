@@ -26,7 +26,7 @@ Services consist of next entities:
 	- **multiple** environments:  for **External services**.
 	- **no** environments: for **Context services**
 
->ℹ️**Note**: Environment's address field for <b>http</b>-based services may be inactive, which means that route registration on Egress is globally disabled in CMBD. In this case, registration must be performed manually.
+> ℹ️ **Note:** Environment's address field for **http**-based services may be inactive, which means that route registration on Egress is globally disabled in CMBD. In this case, registration must be performed manually.
 
 ### API Specification Status Lifecycle
 
@@ -34,8 +34,10 @@ Services consist of next entities:
 
 API Specification statuses details:
 
-🔵 **New** - initial state of API specification, uploaded manually or imported by service discovery.<br>
-🟢 **In Use** - status indicates that API Specification is utilized within at least one chain.<br>
+🔵 **New** - initial state of API specification, uploaded manually or imported by service discovery.
+🟢 **In Use** - status indicates that API Specification is utilized within at least one chain.
 🔴 **Deprecated** - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 
->ℹ️**Notes**:<li>It is only possible to delete **deprecated** API specifications, not used in any chain.</li><li>API Specification versions are based on information from specification itself, hence microservices **must** provide proper specification files with actual metadata.</li>
+> ℹ️ **Notes:**
+> - It is only possible to delete **deprecated** API specifications, not used in any chain.
+> - API Specification versions are based on information from specification itself, hence microservices **must** provide proper specification files with actual metadata.

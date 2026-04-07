@@ -1,8 +1,6 @@
 # Chains [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -58,7 +56,12 @@ Each **chain** contains the following parameters on table view:
 	- _**Delete**_ - deletes chain.
 
 
->ℹ️**Notes:** For most of the table columns there is special context menu. To open it, **click on the column name**. The following functions can be available here:<ul><li>Filter (by this parameter's value)</li><li>Sort Ascending</li><li>Sort Descending</li><li>Hide column</li></ul>
+> ℹ️ **Notes:** For most of the table columns there is special context menu. To open it, **click on the column name**. The following functions can be available here:
+>
+> - Filter (by this parameter's value)
+> - Sort Ascending
+> - Sort Descending
+> - Hide column
 
 **Folder** contains the following parameters on table view:
 - **Name** - clickable reference to the page with folder content.
@@ -75,7 +78,11 @@ Each **chain** contains the following parameters on table view:
 	- _**Delete**_ - deletes folder with all content under it.
 
 
->ℹ️**Notes**:<li>You can <b>move chain/folder</b> to the folder via drag&drop operation (instead of Cut and Paste). To <b>move it to the root directory</b>, drop chain/folder above table headings.</li><li>If you are trying to open folder with no chains in it, message "No elements in folder" will be presented on the folder card.</li><li>Mentioned "Chains" window <b>does not validate</b> the uniqueness of the names, neither folders nor the chains. Hence, it is possible that multiple chains (or folders) might have the same names.</li>
+> ℹ️ **Notes:**
+>
+> - You can **move chain/folder** to the folder via drag&drop operation (instead of Cut and Paste). To **move it to the root directory**, drop chain/folder above table headings.
+> - If you are trying to open folder with no chains in it, message "No elements in folder" will be presented on the folder card.
+> - Mentioned "Chains" window **does not validate** the uniqueness of the names, neither folders nor the chains. Hence, it is possible that multiple chains (or folders) might have the same names.
 
 ### Chain Details Side Panel
 More chain details are available via **right side panel**. To open it, click on any place in the chain row (except chain name, which leads to [graph](graph.md)). The following information about chain will be available (in read-only mode):

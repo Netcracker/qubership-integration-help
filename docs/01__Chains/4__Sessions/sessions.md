@@ -1,8 +1,6 @@
 # Sessions [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -22,7 +20,7 @@ Correlation id can be passed by the following chain modules:
 
 In case of asynchronous request during chain design time user have to configure correlation id source and its name (key).
 
->**ℹ️Note**: Correlation id will be added to the list of camel exchange properties in Runtime.
+> ℹ️ **Note**: Correlation id will be added to the list of camel exchange properties in Runtime.
 
 ## User Interface
 
@@ -44,11 +42,11 @@ Table contains current chain's sessions, aggregated by correlation identifier, i
 - **Session level** - shows level of logging for specific session.
 - **Duration** - shows 2 time values: 1st one is a duration of synchronous main session thread, 2nd one (in brackets) is summary duration of all synchronous and asynchronous threads. In case value is more than 1 second, it will be displayed in seconds, otherwise in milliseconds.
 - **Snapshot** - snapshot version of deployment.
-    >**ℹ️Note**: **After manual [snapshot](../2__Snapshots/snapshots.md) renaming, current parameter's value will not be updated automatically (even for the new sessions)**. To see updated snapshot name, it is required to redeploy the chain.
+    > ℹ️ **Note**: **After manual [snapshot](../2__Snapshots/snapshots.md) renaming, current parameter's value will not be updated automatically (even for the new sessions)**. To see updated snapshot name, it is required to redeploy the chain.
 - **Engine** - name of the session engine domain with pod address (without port) in parentheses.
 - **Control panel** - panel, placed on top of the table. Provides next capabilities:
 	- **Search field** - search box, provides ability to find particular session(s) by body field name, body field value, header name or header value.
-    >**ℹ️Note**: When searching for long or complex entity name, please consider specifying its **full name** or **first part of the name** for proper search result.
+    > ℹ️ **Note**: When searching for long or complex entity name, please consider specifying its **full name** or **first part of the name** for proper search result.
     
 	- ![20](img/delete.svg) - deletes selected session(s).
 	- ![20](img/cloud-download.svg) - exports the session.
@@ -72,7 +70,7 @@ Next information is available, when element's name clicked and window with its d
 - **Previous/Next** buttons - navigation buttons, that allow to open previous or next session element.
 - **Body** tab - contains before/after states of request body, participated in the processing.
 - **Headers** tab - contains the list of headers and their before/after values. Slider **"Only modified"** filters out unmodified headers.
-    >**ℹ️Note**: For **HTTP Sender** and **Service Call** header **"CamelHttpUri"** will contain full URI, with resource and query parameters in it.
+    > ℹ️ **Note**: For **HTTP Sender** and **Service Call** header **"CamelHttpUri"** will contain full URI, with resource and query parameters in it.
 - **Exchange properties** tab - contains list of exchange properties. There are specific properties, available for failed elements in sessions, please refer to the [Building Logic Around Failed Elements](../../00__Overview/6__Building_Logic_Around_Failed_Elements/failed_elements_logic.md) article for more details.
 - **Technical context** tab - contains the list of context headers, that has been received by the chain.
 

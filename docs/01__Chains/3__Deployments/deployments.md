@@ -1,8 +1,6 @@
 # Deployments [Web UI only]
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -33,10 +31,13 @@ Click **"Create deployment"** button marked with ![Plus|20](img/plus.svg). The w
 - **Domain** - choose the engine domain for deployment from list of existing domains.
 - **Snapshot** - version of chain you want to deploy.
 
->**ℹ️Note**: **After manual [snapshot](../2__Snapshots/snapshots.md) renaming, current parameter's value will not be changed automatically.** To change snapshot name on deployment, it is required to **redeploy** the chain.
+> ℹ️ **Note**: **After manual [snapshot](../2__Snapshots/snapshots.md) renaming, current parameter's value will not be changed automatically.** To change snapshot name on deployment, it is required to **redeploy** the chain.
 
 ### Delete Deployment
 
 If you want to **delete deployment**, click ![Delete|20](img/delete.svg) on the right side of deployment.
 
->**ℹ️Notes**:<ul><li>QIP user can do chain **redeploy** - specific maintenance operation for Production usage in high load Chains, that gracefully stop chain, process all sessions from queue, change required chain settings and start it again.</li><li>User will be notified if deployment removal fails due to inability to delete MaaS entities. Problematic MaaS entity will be also mentioned in notification.</li></ul>
+> ℹ️ **Notes:**
+>
+> - QIP user can do chain **redeploy** - specific maintenance operation for Production usage in high load Chains, that gracefully stop chain, process all sessions from queue, change required chain settings and start it again.
+> - User will be notified if deployment removal fails due to inability to delete MaaS entities. Problematic MaaS entity will be also mentioned in notification.

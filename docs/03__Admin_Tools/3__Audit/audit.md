@@ -1,8 +1,6 @@
 # Audit (Web UI only)
 
-<div style="border-left: 6px dashed #cc0000; padding: 10px">
-This functionality is not available via the VS Code Extension.
-</div>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -314,7 +312,12 @@ Secured Variable</td>
 
 There is a specific **"Audit"** tab available in QIP UI, that could be utilized by user to view the logs.
 
->ℹ️**Notes**:<li>There are retention policy settings, that could be configured as part of system installation. Following the settings, action logs might be removed after some period of time.</li><li>In case of bulk operations, audit page will register separate action per each entity (e.g. bulk chain import/export, bulk snapshot deletion, etc.)</li><li>For manual import of complex entities, such as chains, services, etc. system may register both IMPORT and CREATE/UPDATE operations, depending on how imported entities are handled.</li><li>In some scenarios, when the platform does not identify the exact operation type, it sets "Create and Update" as a value for the record.</li>
+> ℹ️ **Notes:**
+>
+> - There are retention policy settings, that could be configured as part of system installation. Following the settings, action logs might be removed after some period of time.
+> - In case of bulk operations, audit page will register separate action per each entity (e.g. bulk chain import/export, bulk snapshot deletion, etc.)
+> - For manual import of complex entities, such as chains, services, etc. system may register both IMPORT and CREATE/UPDATE operations, depending on how imported entities are handled.
+> - In some scenarios, when the platform does not identify the exact operation type, it sets "Create and Update" as a value for the record.
 ## User Interface
 
 ---
@@ -344,7 +347,7 @@ Similar information is presented on "**Action details**" right panel, available 
 
 To export audit table to Excel file, find and click export ![Download|20](img/cloud-download.svg) button, select the required date range and confirm operation.
 
->**ℹ️Note**: Resulted file will always have "Action date" values converted to **GMT** time zone.
+> ℹ️ **Note:** Resulted file will always have "Action date" values converted to **GMT** time zone.
 
 ### Refresh Logs
 

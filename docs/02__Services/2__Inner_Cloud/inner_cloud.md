@@ -9,9 +9,7 @@ Qubership Integration Platform is able to integrate with Inner Cloud Services, t
 ---
 ### View Inner Cloud Services
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 Table with Inner Cloud services is accessible by navigating to **Services** → **Inner Cloud** tab. Next columns and elements are available for the table:
 
@@ -142,9 +140,7 @@ When specification is clicked, system opens new page with the table of available
 
 ### Add Inner Cloud Service
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 To add new Inner Cloud Service, click **"Create service"** button marked with ![Plus|20](img/plus.svg)  on the top right of the screen. Specify service name and description on a newly opened pop-up and click "**Create**" button. System opens new window with three tabs:
 - **Parameters**
@@ -168,7 +164,7 @@ To add specification group to Inner Cloud service:
 1.  Select ![Upload|20](img/cloud-upload.svg) "**Import Specifications**" option for desired service.
 2. Specify the **name** of the specification group on the opened pop-up.
 3. **Upload** file or archive with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
->ℹ️Note: For the service with ***grpc*** protocol there could be uploaded `.zip` archive with more than one `.proto` file.
+> ℹ️ **Note:** For the service with ***grpc*** protocol there could be uploaded `.zip` archive with more than one `.proto` file.
 4. For **WSDL**, **GraphQL**, **Protobuf** specifications, system will generate the name by autoincrement (e.g. 1.0.0 -> 2.0.0), rename if required.
 5. Confirm operation with **"Create"** button.
 
@@ -179,7 +175,9 @@ When API specification is added you will see the specification group with respec
 To add API specification into existing specification group:
 1. Select ![Upload|20](img/cloud-upload.svg) "**Import Specifications**" option for desired group.
 2. **Upload** file or archive with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
->ℹ️**Note:** <ul><li>**API Specification version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.</li><li>For service with ***gprc*** protocol, import archive could contain more than one `.proto` file.</li></ul>
+> ℹ️ **Note:**
+> - **API Specification version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.
+> - For service with ***gprc*** protocol, import archive could contain more than one `.proto` file.
 3. Only for **WSDL**, **GraphQL**, **Protobuf** specifications, system will generate the name by autoincrement (e.g. 1.0.0 -> 2.0.0), rename if required.
 4. Confirm operation with **"Create"** button.
 
@@ -202,15 +200,14 @@ To update the environment for Inner Cloud Service, follow the steps specified be
     5. **Properties** - section to manage properties for the environment:
         - To add new property, click the icon ![Caret down|20](img/caret-down.svg) near the section **"Properties"**, press button ![Plus|20](img/plus.svg), enter suitable data and click **`Enter`**.
         - To bulk create/update of environment properties, turn on the slider **"Show as Key Value"**, put pairs of property name and value and click **`Enter`**. See the format below:
-       <pre style="background-color: #F5F5F7"><code style="color: #000000">property1_name=property1_value;
+       ```
+       property1_name=property1_value;
        property2_name=property2_value;
-       </code></pre>
+       ```
 6. Click **"Save"** or shortcut combination of **`Ctrl+Enter`**.
 
 Default properties are unique for different protocols and described below:
-  <ul>
-    <li><b>http</b></li>
-  </ul>
+**http**
 
 | Parameter                | Data Type | Description                                                                                                                                                                            | Sample |
 | ------------------------ | :-------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
@@ -221,9 +218,7 @@ Default properties are unique for different protocols and described below:
 | deleteWithBody           | Boolean   | Indicates that DELETE request contains body.<br>**Default value:** false                                                                                                               | false  |
 | getWithBody              | Boolean   | Indicates that GET request contains body.<br>**Default value:** false                                                                                                                  | false  |
 
-  <ul>
-    <li><b>kafka</b></li>
-  </ul>
+**kafka**
 
 | Parameter               | Data Type | Description                                                                                                                                                                                                                                                                                                                                                                                                            | Sample                                                                                              |
 | ----------------------- | :-------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -231,16 +226,14 @@ Default properties are unique for different protocols and described below:
 | sslProtocol             | String    | The SSL protocol used to generate the SSLContext. Default setting is TLS, which is used for most of the cases. Allowed values in recent JVMs are TLS, TLSv1.1 and TLSv1.2. SSL, SSLv2 and SSLv3 may be supported in older JVMs, but their usage is discouraged due to known security vulnerabilities.                                                                                                                  | TLSv1.2                                                                                             |
 | saslMechanism           | String    | The Simple Authentication and Security Layer (SASL) Mechanism used. For the valid values see http://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml.                                                                                                                                                                                                                                                    | GSSAPI                                                                                              |
 | saslJaasConfig          | String    | Expose Kafka sasl.jaas.config parameter.                                                                                                                                                                                                                                                                                                                                                                               | org.apache.kafka.common.security.plain.PlainLoginModule required username=example password=example; |
-| securityProtocol        | String    | Protocol used to communicate with brokers. Possible values:<ul><li>SASL_PLAINTEXT</li><li>PLAINTEXT</li><li>SASL_SSL</li><li>SSL</li></ul>                                                                                                                                                                                                                                                                             | PLAINTEXT                                                                                           |
-| consumerConsistencyMode | String    | Blue-green specific parameter. Possible values: <ul><li>EVENTUAL – Default option when blue-green is supported. Consumers offset for candidate during promotion stays the same </li><li>GUARANTEE_CONSUMPTION - consumers offset for candidate during promotion is copied from lowest offset for this group of consumers</li></ul><br>ℹ️**Note:** This parameter and its value should be entered manually if required. | EVENTUAL                                                                                            |
+| securityProtocol        | String    | Protocol used to communicate with brokers. Possible values: SASL_PLAINTEXT, PLAINTEXT, SASL_SSL, SSL                                                                                                                                                                                                                                                                                                                  | PLAINTEXT                                                                                           |
+| consumerConsistencyMode | String    | Blue-green specific parameter. Possible values: EVENTUAL – Default option when blue-green is supported. Consumers offset for candidate during promotion stays the same; GUARANTEE_CONSUMPTION - consumers offset for candidate during promotion is copied from lowest offset for this group of consumers. ℹ️ **Note:** This parameter and its value should be entered manually if required.                              | EVENTUAL                                                                                            |
 | sslEnabledProtocols     | String    | The list of protocols enabled for SSL connections. The default is TLSv1.2,TLSv1.3 when running with Java 11 or newer, TLSv1.2 otherwise. With the default value for Java 11, clients and servers will prefer TLSv1.3 if both support it and fallback to TLSv1.2 otherwise (assuming both support at least TLSv1.2). This default should be fine for most cases.                                                        | TLSv1,TLSv1.1,TLSv1.2                                                                               |
 | sslEndpointAlgorithm    | String    | The endpoint identification algorithm to validate server hostname using server certificate.                                                                                                                                                                                                                                                                                                                            | HTTPS                                                                                               |
 
->ℹ️Note: When message processing is slow, it could lead to interruption due to reached timeout. In such cases, it is recommended to specify parameter **maxPollIntervalMs** (The maximum delay between invocations of polls when using consumer group management.) with value **higher**, than default **300000** and parameter **maxPollRecords** (The maximum number of records returned in a single call to poll) with value **lower**, than defaulted **500**. This will allow to process the messages smoothly, with lower risk of timeout.
+> ℹ️ **Note:** When message processing is slow, it could lead to interruption due to reached timeout. In such cases, it is recommended to specify parameter **maxPollIntervalMs** (The maximum delay between invocations of polls when using consumer group management.) with value **higher**, than default **300000** and parameter **maxPollRecords** (The maximum number of records returned in a single call to poll) with value **lower**, than defaulted **500**. This will allow to process the messages smoothly, with lower risk of timeout.
 
-  <ul>
-    <li><b>amqp</b></li>
-  </ul>
+**amqp**
 
 | Parameter  | Data Type | Description                                                                                                                               | Sample |
 | ---------- | :-------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
@@ -259,11 +252,9 @@ When environment is saved, its updated card will be available under the environm
 
 ### Import Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
-To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. API Specification version in archive <font color="#fa0000">**must be unique**</font> for each API Specification. During the import, system follows next logic:
+To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. API Specification version in archive **must be unique** for each API Specification. During the import, system follows next logic:
 - Verify Import Instructions, saved in the system. Proceed with the step below only if they exist:
 	- Fetch the list of service ids with **ignore** action and skip import process for them.
 - Find existing services, specification groups and specification by ids from import archive:
@@ -271,21 +262,16 @@ To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), dra
   - If system already has entities with ids, specified in import archive:
     - Merge data from archive, including **custom labels**, into existing entities.
     - **Technical labels** are going to be removed from existing entities if they are updated as a part of import process.
->ℹ️**Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
+> ℹ️ **Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
 
-<ul>
-    <ul> 
-      <li><b>"Discovered"</b> status of API specification for Inner Cloud Service will be switched to <b>"Manually uploaded"</b> as the result of manual import of the specification with the same ID.</li>
-	</ul> 
-	<li>Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specifics:</li>
-    <ul>
-      <li>For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.</li>
-      <li>For <b>Swagger</b> and <b>AsyncAPI</b> system will build specification version from "version" parameter in specification file.</li>
-      <li>For <b>WSDL</b>, <b>GraphQL</b> and <b>Protobuf</b> API specification's, their versions will be generated by autoincrement (1.0.0, 2.0.0, etc.), but it is also possible to manually rename specifications before import.</li>
-    </ul>
-    </ul> 
+- **"Discovered"** status of API specification for Inner Cloud Service will be switched to **"Manually uploaded"** as the result of manual import of the specification with the same ID.
+- Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specifics:
+    - For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
+    - For **Swagger** and **AsyncAPI** system will build specification version from "version" parameter in specification file.
+    - For **WSDL**, **GraphQL** and **Protobuf** API specification's, their versions will be generated by autoincrement (1.0.0, 2.0.0, etc.), but it is also possible to manually rename specifications before import.
+
    
->⚠️**Warning:** When importing **grpc** services, it is absolutely required to have protobuf files properly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
+> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files properly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
 
 When import is completed, system displays import result table with the following columns:
 
@@ -299,9 +285,7 @@ When import is completed, system displays import result table with the following
 
 ### Export Service(s)
 
-<span style="background:#deebff;color:#0747a6;padding:4px 8px;border-radius:6px;font-weight:600;">
-  Not available via VS Code extension
-</span>
+> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
 
 System allows to export service with all its API specifications, environments and sources. From **"External Services"** page - mark specific services with checkboxes and click ![Download|20](img/cloud-download.svg) **Export**. Or simply click this button to export all services at once after confirmation.
 
