@@ -40,7 +40,7 @@ Scenarios, mapping structure, transformation settings and input/output samples a
 | [`formatDateTime`](#formatdatetime) | Date / Time | Build formatted date/time string |
 | [Dictionary](#dictionary) | UI Transformation | Match and replace with dictionary |
 | [Format date/time](#format-datetime) | UI Transformation | Convert between date formats |
-| [Conditional](#conditional) | UI Transformation | Condition with true/false values |
+| [Conditional Transformation](#conditional-transformation) | UI Transformation | Condition with true/false values |
 | [Default value](#default-value) | UI Transformation | Fallback for missing values |
 | [Replace all](#replace-all) | UI Transformation | Replace via regex |
 | [Trim](#trim-1) | UI Transformation | Strip spaces |
@@ -1034,7 +1034,7 @@ Unix epoch
 }
 ```
 
-### Conditional
+### Conditional Transformation
 
 Via this option it is possible to add a condition and true/false values. Available fields:
 - **Condition** - Mandatory field. Specifies a condition itself.
