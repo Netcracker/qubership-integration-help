@@ -25,7 +25,7 @@ Table with **Context** services is accessible by navigating to **Services** → 
 - **Labels** - list of colored labels of the service, specification group or specification, unique within particular entity of each type.
 - **Created When** - datetime of entity creation.
 - **Created By** - shows the user, who created an entity.
-* **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu under each service. Contains next operations:
+- **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu under each service. Contains next operations:
 	- **Edit** ![Edit|20](img/edit.svg) - opens pop-up to change service name, description or set of **custom** labels.
 	- **Delete** ![Delete|20](img/delete.svg) - deletes entity.
 	- **Export** ![Upload|20](img/cloud-upload.svg) - allows to export the entity.
@@ -40,13 +40,13 @@ Table with **Context** services is accessible by navigating to **Services** → 
 ### View Parameters
 
 When service is clicked, system shows Parameters tab with the following information:
-* Name - mandatory service name.
-* Description - description of service.
+- Name - mandatory service name.
+- Description - description of service.
 
 For _Web UI_ there are some additional information:
 
-* Created - datetime of entity creation.
-* Modified - datetime of entity modifying.
+- Created - datetime of entity creation.
+- Modified - datetime of entity modifying.
 
 ### Add Context Service
 
@@ -57,7 +57,7 @@ To add new context service, click **"Create"** button marked with ![Plus|20](img
 - **Description** - description of service.
 - **Service type** - types of service.
 
-Specify the required fields and click **"Save"**. Notification about successful saving means that implemented service is added to the list of implemented services.
+Specify the required fields and click **"Save"**. Notification about successful saving means that context service is added to the list of context services.
 
 ### Import Service(s)
 

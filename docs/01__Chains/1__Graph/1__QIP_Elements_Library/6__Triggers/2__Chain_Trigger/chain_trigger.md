@@ -5,6 +5,7 @@
 **Chain Trigger** is an element, that is used in pair with [Chain Call](../../1__Routing/6__Chain_Call/chain_call.md) and provides the ability to build complex chain routes, where main chain must invoke other sub chains in order to properly process the data and fulfill required business scenario. This element must be placed as a first element in the sub-chain, so the main chain can be linked to it via Chain Call element and can pass the data.
 
 >**ℹ️Note**: According to **Apache Camel** framework, when chain is triggered, system creates **Exchange Object**, that handles input data following the logic, described in respective article: [Apache Camel Context Concept](../../../../../00__Overview/2__Apache_Camel_Context_Concept/apache_camel_context_concept.md).
+
 ## User Interface
 
 ---

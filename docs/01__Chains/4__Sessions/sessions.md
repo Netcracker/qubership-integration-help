@@ -37,7 +37,7 @@ Table contains current chain's sessions, aggregated by correlation identifier, i
 	- 🟡 _**Completed With Warnings**_ - session has been completed with warnings or exceptions, successfully handled within proper elements, such as try-catch-finally, etc. Error details are also available on tab "Errors" under failed session element.
 	- 🔵 _**In Progress**_ - session is in progress. Finalized status will be available in some time.
 	- ⚫ _**Cancelled Or Unknown**_ - session processing has been interrupted by chain itself. For example, this status might indicate that one of the Split element branches failed while this element has option "Stop On Exception" selected, which caused interruption of all other branches.
-* **Start Time** - start datetime of the session.
+- **Start Time** - start datetime of the session.
 - **Finish Time** - finish datetime of the session
 - **Session level** - shows level of logging for specific session.
 - **Duration** - shows 2 time values: 1st one is a duration of synchronous main session thread, 2nd one (in brackets) is summary duration of all synchronous and asynchronous threads. In case value is more than 1 second, it will be displayed in seconds, otherwise in milliseconds.

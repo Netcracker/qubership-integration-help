@@ -48,54 +48,54 @@ Table with Implemented services is accessible by navigating to **Services** → 
 ### View Parameters
 
 When service is clicked, system shows Parameters tab with the following information:
-* Name - mandatory service name.
-* Description - description of service.
-* Protocol - service's integration protocol.
-* Type - type of service. Possible values:
-	* External;
-	* Internal;
-	* Implemented.
-* Labels - list of colored labels of the service, specification group or specification, unique within particular entity of each type. It might contain **custom** labels, entered by user via Qubership Integration Platform UI or **technical** labels, populated as part of the **deployment via Samples Repository**. Custom labels can be added or removed clicking on the field. **Technical** labels cannot be updated manually.
+- Name - mandatory service name.
+- Description - description of service.
+- Protocol - service's integration protocol.
+- Type - type of service. Possible values:
+	- External;
+	- Internal;
+	- Implemented.
+- Labels - list of colored labels of the service, specification group or specification, unique within particular entity of each type. It might contain **custom** labels, entered by user via Qubership Integration Platform UI or **technical** labels, populated as part of the **deployment via Samples Repository**. Custom labels can be added or removed clicking on the field. **Technical** labels cannot be updated manually.
 
 For _Web UI_ there are some additional information:
 
-* Created - datetime of entity creation.
-* Modified - datetime of entity modifying.
+- Created - datetime of entity creation.
+- Modified - datetime of entity modifying.
 
 ### View Specification Groups
 
-* **Name** - clickable name of the specification group or specification. When clicked, system navigates to respective entity.
+- **Name** - clickable name of the specification group or specification. When clicked, system navigates to respective entity.
 - **Status** - API Specification status. Possible values:
 	- 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
 	- 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
 	- 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 - **Source** - specifies the way specification was created. Possible values:
 	- **Manual** - uploaded manually.
-	* **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
-* **Labels** - list of colored labels of the specification group, unique within particular specification group.
+	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+- **Labels** - list of colored labels of the specification group, unique within particular specification group.
 - **Used By** - expand, that contains the list of chains, where specification is being utilized. Each chain name under this expand is clickable and navigates to respective configuration graph.
-* **Created When** - datetime of entity creation.
+- **Created When** - datetime of entity creation.
 - **Created By** - shows the user, who created an entity.
 - **Modified When** - datetime of entity modification.
 - **Modified By** - shows the user, who modified an entity.
 
 To add new information, click on the button ![Settings|20](img/setting.svg) located on the right side. The following field are available:
 
-* **Protocol** - shows what protocol is used.
-* **Extended Protocol** - shows special rules for the service protocol.
-* **Specification** - the service's instruction.
-* **Internal Service Name** - shows internal service name.
+- **Protocol** - shows what protocol is used.
+- **Extended Protocol** - shows special rules for the service protocol.
+- **Specification** - the service's instruction.
+- **Internal Service Name** - shows internal service name.
 - **Method** -  method of the operation, mentioned in the specification.
 - **URL** - operation path.
 
 **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu. Contains the following operations:
-* ![Arrow down|21](img/down.svg) - Expand.
-* ![Plus|20](img/plus.svg) - Add Specification.
-* ![Delete|20](img/delete.svg) - Delete.
+- ![Arrow down|21](img/down.svg) - Expand.
+- ![Plus|20](img/plus.svg) - Add Specification.
+- ![Delete|20](img/delete.svg) - Delete.
 
 In general at the right top the next operations are available:
-* ![Upload|20](img/cloud-upload.svg) - Import Specifications.
-* ![Download|20](img/cloud-download.svg) - Export All Groups.
+- ![Upload|20](img/cloud-upload.svg) - Import Specifications.
+- ![Download|20](img/cloud-download.svg) - Export All Groups.
 
 ### View Specifications
 
@@ -108,31 +108,31 @@ When particular specification group name is clicked, system opens new page with 
 	- 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 - **Source** - specifies the way specification was created. Possible values:
 	- **Manual** - uploaded manually.
-	* **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
-*  **Labels** - list of colored labels of the specification.
+	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+- **Labels** - list of colored labels of the specification.
 - **Used By** - expand, that contains the list of chains, where specification is being utilized. Each chain name under this expand is clickable and navigates to respective configuration graph.
 - **Method** - method of the operation, mentioned in the specification (GET, POST, etc.)
 - **URL** - operation path.
 
 To add new information, click on the button ![Settings|20](img/setting.svg) located on the right side. The following field are available:
 
-* **Protocol** - shows what protocol is used.
-* **Extended Protocol** - shows special rules for the service protocol.
-* **Specification** - the service's instruction.
-* **Internal Service Name** - shows internal service name.
+- **Protocol** - shows what protocol is used.
+- **Extended Protocol** - shows special rules for the service protocol.
+- **Specification** - the service's instruction.
+- **Internal Service Name** - shows internal service name.
 - **Created When** - datetime of entity creation.
 - **Created By** - shows the user, who created an entity.
 - **Modified When** - datetime of entity modification.
 - **Modified By** - shows the user, who modified an entity.
 
 **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu. Contains the following operations:
-* ![Arrow down|20](img/down.svg) - Expand
-* ![Stop|21](img/stop.svg) - Deprecate.
-* ![Export|20](img/export.svg) - Export.
+- ![Arrow down|20](img/down.svg) - Expand
+- ![Stop|21](img/stop.svg) - Deprecate.
+- ![Export|20](img/export.svg) - Export.
 
 In general at the right top the next operations are available:
-* ![Upload|20](img/cloud-upload.svg) - Import Specifications.
-* ![Download|20](img/cloud-download.svg) - Export Selected Specifications.
+- ![Upload|20](img/cloud-upload.svg) - Import Specifications.
+- ![Download|20](img/cloud-download.svg) - Export Selected Specifications.
 
 ### View Operations
 
@@ -170,8 +170,6 @@ To add specification group to Implemented service:
 	- **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
 > ℹ️ **Note:** Via checkbox ***"External routes only"*** it is possible to control showing only respective [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) in the list.
 
-
-> ℹ️ **Note:** Via checkbox "External routes only" it is possible to control showing only respective
 4. Confirm operation with **"Create"** button.
 
 When API specification is added you will see the specification group with respective name and dates. All specifications will be placed under this specification group.
@@ -220,11 +218,11 @@ Default properties are described below:
 | Parameter                | Data Type | Description                                                                                                                                                                            | Sample |
 | ------------------------ | :-------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | connectTimeout           | String    | Determines the timeout in milliseconds until a connection is established. Infinite timeout will be applied when zero value is specified.<br>**Default value:** 120000                  | 120000 |
-| soTimeout                | String    | Defines the socket timeout in milliseconds, which is the timeout for waiting for data. Infinite timeout will be applied when zero value is specified.<br>**Default value:**120000      | 120000 |
+| soTimeout                | String    | Defines the socket timeout in milliseconds, which is the timeout for waiting for data. Infinite timeout will be applied when zero value is specified.<br>**Default value:** 120000     | 120000 |
 | connectionRequestTimeout | String    | The timeout in milliseconds used when requesting a connection from the connection manager. Infinite timeout will be applied when zero value is specified.<br>**Default value:** 120000 | 120000 |
 | responseTimeout          | String    | Determines the timeout in milliseconds until arrival of a response. Infinite timeout will be applied when zero value is specified.<br>**Default value:** 120000                        | 120000 |
 | deleteWithBody           | Boolean   | Indicates that DELETE request contains body.<br>**Default value:** false                                                                                                               | false  |
-| getWithBody              | Boolean   | Indicates that GET request contains body.<br>**Default value:**false                                                                                                                   | false  |
+| getWithBody              | Boolean   | Indicates that GET request contains body.<br>**Default value:** false                                                                                                                   | false  |
 
 Additionally, if it is required to use same connection for multiple requests, it is possible to specify **reuseEstablishedConnection** property with values: true/false.
 
@@ -253,7 +251,7 @@ To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), dra
     - For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
     - For **Swagger** system will build specification version from "version" parameter in specification file.
 
-> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files roperly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
+> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files properly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
 
 When import is completed, system displays import result table with the following columns:
 
@@ -277,4 +275,4 @@ System allows to export service with all its API specifications, environments an
 
 Please consider next constraints:
 - When implemented service is being created from HTTP Trigger element, it (trigger) **must** have a **single HTTP method** configured in the settings. Otherwise, creation will fail with error.
-- **Technical** labels  be imported via UI or exported.
+- **Technical** labels cannot be imported via UI or exported.

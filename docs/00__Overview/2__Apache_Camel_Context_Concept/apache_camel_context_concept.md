@@ -134,7 +134,7 @@ Diagram below shows how context data is being managed by **Condition** element:
 ### Try-Catch-Finally
 Diagram below shows how context data is being managed by **Try-Catch-Finally** element:
 
-![461](img/camel_tcf.svg)
+![](img/camel_tcf.svg)
 
 **Steps Description**
 

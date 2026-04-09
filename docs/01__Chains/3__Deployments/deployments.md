@@ -15,7 +15,7 @@ To make a chain available for usage, its snapshot shall be deployed on the speci
 ### View Deployments Tab
 
 Under the chain it is possible to navigate on "**Deployments**" tab. The following information about deployments are available:
-* **Snapshot**: Displays the deployed version (e.g., _V1.2_ ).
+- **Snapshot**: Displays the deployed version (e.g., _V1.2_ ).
 - **Domain**: Shows the selected domain for deployment.
 - **Status**: IP address indicating deployment success or failure via color-coded labels:
     - ⚫ **_Progressing_** - deployment is in progress. There are engines which haven't received finalized status yet.

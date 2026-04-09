@@ -23,8 +23,8 @@ Tab "Access Control" contains a table, representing the unique endpoint, that is
 - **Chain Status** - current status of the related chain.
 
 Next capabilities are available above the table in the right top:
-* ![20](img/setting.svg) - opens column settings.
-* ![20](img/carry-out.svg) - selects unsaved chains.
+- ![20](img/setting.svg) - opens column settings.
+- ![20](img/carry-out.svg) - selects unsaved chains.
 - ![20](img/send.svg) -  redeploys chain(s) with unsaved changes.
 - ![20](img/plus.svg) - opens pop-up that allows to add new role(s) to desired endpoints.
 - ![20](img/minus.svg) - opens pop-up that allows to remove the role(s) from desired endpoints.
