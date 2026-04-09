@@ -47,7 +47,10 @@ Scenarios, mapping structure, transformation settings and input/output samples a
 
 ### Expressions
 
-User might specify expression for mapped fields based on custom AtlasMap syntax. This option might be used when there is complex data transformation required to be performed against input data. It is also possible to "replicate" transformations, which are available as options in the "Transformation" dropdown list. For more convenient expression entering system displays prompts, which might be accessed via combination of Ctrl + Space. Each function in the prompts is supplied with snippet, that contains detailed description and syntax. While working with expressions, the following notes shall be considered:
+User might specify expression for mapped fields based on custom AtlasMap syntax. This option might be used when there is complex data transformation required to be performed against input data.
+It is also possible to "replicate" transformations, which are available as options in the "Transformation" dropdown list.
+For more convenient expression entering system displays prompts, which might be accessed via combination of Ctrl + Space.
+Each function in the prompts is supplied with snippet, that contains detailed description and syntax. While working with expressions, the following notes shall be considered:
 - Combination of different functions is available in a single transformation.
 - It is required to use single quotes when specifying string in the expressions (e.g. 'String').
 
@@ -60,10 +63,10 @@ Concatenation of two fields with "_" as a separator.
 
 **Mapper structure sample:**
 
-![](../img/concatenation.png)
+![Concatenation mapper structure](../img/concatenation.png)
 
 **Expression sample:**
-```
+```text
 body.firstName + '_' + body.lastName
 ```
 
@@ -87,10 +90,10 @@ Convert string value to lowercase.
 
 **Mapper structure sample:**
 
-![](../img/tolower.png)
+![tolower mapper structure](../img/tolower.png)
 
 **Expression sample:**
-```
+```text
 tolower(body.code)
 ```
 
@@ -113,10 +116,10 @@ Trim leading and trailing spaces from the string.
 
 **Mapper structure sample:**
 
-![](../img/replaceAll.png)
+![trim mapper structure](../img/replaceAll.png)
 
 **Expression sample:**
-```
+```text
 trim(body.description)
 ```
 
@@ -139,10 +142,10 @@ Put every word and underscores from the string in the round brackets.
 
 **Mapper structure sample:**
 
-![](../img/replaceAll.png)
+![replaceAll mapper structure](../img/replaceAll.png)
 
 **Expression sample:**
-```
+```text
 replaceAll(body.description, '(\w[\w\d_]*)', '($1)')
 ```
 
@@ -172,10 +175,10 @@ Mentioned operators shall be entered without quotes.
 
 **Mapper structure sample:**
 
-![](../img/arithmetic.png)
+![Arithmetic mapper structure](../img/arithmetic.png)
 
 **Expression sample:**
-```
+```text
 body.productPrice - body.discount
 ```
 
@@ -205,10 +208,10 @@ If two parameters are equal — pass "true", otherwise "false".
 
 **Mapper structure sample:**
 
-![](../img/if1.png)
+![if mapper structure](../img/if1.png)
 
 **Expression sample:**
-```
+```text
 if (body.oldPrice == body.newPrice, true, false)
 ```
 
@@ -233,10 +236,10 @@ If remainder after param1 has been divided is not equal to 0, then "true", else 
 
 **Mapper structure sample:**
 
-![](../img/if2.png)
+![if mapper structure](../img/if2.png)
 
 **Expression sample:**
-```
+```text
 if(body.price % 2 != 0, 'true', 'false')
 ```
 
@@ -259,10 +262,10 @@ Check that value of source field is empty.
 
 **Mapper structure sample:**
 
-![](../img/isEmpty.png)
+![isempty mapper structure](../img/isEmpty.png)
 
 **Expression sample:**
-```
+```text
 isempty(body.customerName)
 ```
 
@@ -288,10 +291,10 @@ Pick all objects from the array, where field "value" is bigger than "2" (mention
 
 **Mapper structure sample:**
 
-![](../img/filterBy.png)
+![filterBy mapper structure](../img/filterBy.png)
 
 **Expression sample:**
-```
+```text
 filterBy(
    body.products,
    body.products.productPrice > constant.2
@@ -341,10 +344,10 @@ Get first object from the array.
 
 **Mapper structure sample:**
 
-![](../img/getFirst1.png)
+![getFirst mapper structure](../img/getFirst1.png)
 
 **Expression sample:**
-```
+```text
 getFirst(body.customers)
 ```
 
@@ -384,10 +387,10 @@ Pick first primitive, which is bigger than "4", from the array.
 
 **Mapper structure sample:**
 
-![](../img/getFirst2.png)
+![getFirst mapper structure](../img/getFirst2.png)
 
 **Expression sample:**
-```
+```text
 getFirst(
    filterBy(
       body.priceList,
@@ -421,10 +424,10 @@ Get first object from array, where id = 100, and return only value(s) placed in 
 
 **Mapper structure sample:**
 
-![](../img/getFirst3.png)
+![getFirst mapper structure](../img/getFirst3.png)
 
 **Expression sample:**
-```
+```text
 getFirst(body.customers)
    map(filterBy(
       body.product.productCharacteristics,
@@ -483,10 +486,10 @@ Fetch "id" and "type" for each customer object in array and map them together wi
 
 **Mapper structure sample:**
 
-![](../img/map.png)
+![map mapper structure](../img/map.png)
 
 **Expression sample:**
-```
+```text
 map(
    body.customers,
    body.customers.id + '_' + body.customers.type
@@ -533,10 +536,10 @@ Sort array of customers based on each customer's name in alphabet order.
 
 **Mapper structure sample:**
 
-![](../img/sort1.png)
+![sort mapper structure](../img/sort1.png)
 
 **Expression sample:**
-```
+```text
 sort(body.customers, body.customers.name)
 ```
 
@@ -586,10 +589,10 @@ Sort values in "numbers" array in descending order.
 
 **Mapper structure sample:**
 
-![](../img/sort2.png)
+![sort mapper structure](../img/sort2.png)
 
 **Expression sample:**
-```
+```text
 sort(body.numbers, -body.numbers)
 ```
 
@@ -622,10 +625,10 @@ Build list from primitives, objects and arrays.
 
 **Mapper structure sample:**
 
-![](../img/list.png)
+![list mapper structure](../img/list.png)
 
 **Expression sample:**
-```
+```text
 list(
    makeObject('requester', body.customerName),
    makeObject('user', property.user.userName)
@@ -662,10 +665,10 @@ Pick all field names (keys) from the object.
 
 **Mapper structure sample:**
 
-![](../img/getKeys.png)
+![getKeys mapper structure](../img/getKeys.png)
 
 **Expression sample:**
-```
+```text
 getKeys(body.customerAddress)
 ```
 
@@ -699,10 +702,10 @@ When *getValues* is placed inside *replaceAll* function it will be **only** prop
 
 **Mapper structure sample:**
 
-![](../img/getValues.png)
+![getValues mapper structure](../img/getValues.png)
 
 **Expression sample:**
-```
+```text
 getValues(body.contactNumbers)
 ```
 
@@ -733,10 +736,10 @@ Build key/value map from primitives and objects.
 
 **Mapper structure sample:**
 
-![](../img/makeObject.png)
+![makeObject mapper structure](../img/makeObject.png)
 
 **Expression sample:**
-```
+```text
 makeObject(
    body.customerName, body.orderCount,
    body.product, body.productModel,
@@ -784,10 +787,10 @@ Merge objects or array of objects to a new object.
 
 **Mapper structure sample:**
 
-![](../img/mergeObjects.png)
+![mergeObjects mapper structure](../img/mergeObjects.png)
 
 **Expression sample:**
-```
+```text
 mergeObjects(
    body.account,
    body.accountInfo,
@@ -863,10 +866,10 @@ Build datetime with format 'yyyy-MM-dd' from three connected source body fields.
 
 **Mapper structure sample:**
 
-![](../img/formatDateTime.png)
+![formatDateTime mapper structure](../img/formatDateTime.png)
 
 **Expression sample:**
-```
+```text
 formatDateTime(
    'yyyy-MM-dd',
    constant.year,
@@ -876,7 +879,7 @@ formatDateTime(
 ```
 
 **Input data:**
-```
+```text
 No body
 ```
 
@@ -893,10 +896,10 @@ Build complex datetime with format 'yyyy-MM-dd HH:mm:ss.SSSZ' from three connect
 
 **Mapper structure sample:**
 
-![](../img/formatDateTime.png)
+![formatDateTime mapper structure](../img/formatDateTime.png)
 
 **Expression sample:**
-```
+```text
 formatDateTime(
    'yyyy-MM-dd HH:mm:ss.SSSZ',
    constant.year,
@@ -912,7 +915,7 @@ formatDateTime(
 ```
 
 **Input data:**
-```
+```text
 No body
 ```
 
@@ -929,10 +932,10 @@ Build complex datetime with format 'yyyy-MM-dd HH:mm:ss.SSSZ' but skip hours, mi
 
 **Mapper structure sample:**
 
-![](../img/formatDateTime.png)
+![formatDateTime mapper structure](../img/formatDateTime.png)
 
 **Expression sample:**
-```
+```text
 formatDateTime(
    'yyyy-MM-dd HH:mm:ss.SSSZ',
    constant.year,
@@ -948,7 +951,7 @@ formatDateTime(
 ```
 
 **Input data:**
-```
+```text
 No body
 ```
 
@@ -961,16 +964,19 @@ No body
 
 ### Dictionary
 
-This option allows to configure a dictionary, that could match retrieved value with another value from the dictionary and use its translation instead of the source value. User is able to work with dictionary configuration via table view with buttons "**Add rule**", "**Clear rules**" and switch to the code view. Value specified in "**Default**" field will be used when input value has no matches in the dictionary. Inability to find proper match while having empty "**Default**" field leads to error.
+This option allows to configure a dictionary, that could match retrieved value with another value from the dictionary and use its translation instead of the source value.
+User is able to work with dictionary configuration via table view with buttons "**Add rule**", "**Clear rules**" and switch to the code view.
+Value specified in "**Default**" field will be used when input value has no matches in the dictionary.
+Inability to find proper match while having empty "**Default**" field leads to error.
 
 #### Replace value with matching value, specified in dictionary
 
 **Mapper structure sample:**
 
-![](../img/dictionary.png)
+![Dictionary mapper structure](../img/dictionary.png)
 
 **Transformation sample:**
-```
+```text
 R = Red
 B = Blue
 ```
@@ -1001,10 +1007,10 @@ This transformation type is intended to convert source date to the desirable for
 
 **Mapper structure sample:**
 
-![](../img/formatDateTime2.png)
+![Format date/time mapper structure](../img/formatDateTime2.png)
 
 **Transformation sample:**
-```
+```text
 Input:
 Format: yyyy-MM-dd HH:mm:ss.SSSZ
 Locale: en_US
@@ -1041,10 +1047,10 @@ Every value shall be specified by using an expression, written in custom AtlasMa
 
 **Mapper structure sample:**
 
-![](../img/conditional1.png)
+![Conditional mapper structure](../img/conditional1.png)
 
 **Transformation sample:**
-```
+```text
 Condition: body.status == 'Completed'
 True expression: 1
 False expression: 0
@@ -1068,10 +1074,10 @@ False expression: 0
 
 **Mapper structure sample:**
 
-![](../img/conditional2.png)
+![Conditional mapper structure](../img/conditional2.png)
 
 **Transformation sample:**
-```
+```text
 Condition: body.customer == null
 True expression: 'missing'
 False expression: body.customer
@@ -1105,15 +1111,15 @@ This option allows to specify a default value for the mapped parameter when its 
 
 **Mapper structure sample:**
 
-![](../img/default.png)
+![Default value mapper structure](../img/default.png)
 
 **Transformation sample:**
-```
+```text
 Value: 2024_3
 ```
 
 **Input data:**
-```
+```text
 No body
 ```
 
@@ -1135,10 +1141,10 @@ This option allows to edit entered value, by replacing its part, utilizing regul
 
 **Mapper structure sample:**
 
-![](../img/replaceAll1.png)
+![Replace all mapper structure](../img/replaceAll1.png)
 
 **Transformation sample:**
-```
+```text
 Regular expression: (\w[\w\d]*)
 Replacement: ($1)
 ```
@@ -1161,10 +1167,10 @@ Replacement: ($1)
 
 **Mapper structure sample:**
 
-![](../img/replaceAll2.png)
+![Replace all mapper structure](../img/replaceAll2.png)
 
 **Transformation sample:**
-```
+```text
 Regular expression: (?<=\d)\,(?=\d)
 Replacement: .
 ```
@@ -1201,10 +1207,10 @@ This option allows to strip spaces in the given string. Field "**Side**" additio
 
 **Mapper structure sample:**
 
-![](../img/trim.png)
+![Trim mapper structure](../img/trim.png)
 
 **Transformation sample:**
-```
+```text
 Side: Right
 ```
 

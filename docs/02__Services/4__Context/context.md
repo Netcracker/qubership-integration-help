@@ -20,22 +20,22 @@ Table with **Context** services is accessible by navigating to **Services** → 
 - **Protocol** - service's integration protocol. Possible values: **_http, soap, kafka, amqp, graphql, grpc_**. Value for this parameter will be propagated from the firstly imported API specification. There is no ability to upload API specifications with another protocol after that.
 - **Status** - API Specification status. 
 - **Source** - specifies the way specification was created. Possible values:
-	- **Manual** - uploaded manually.
-	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+  - **Manual** - uploaded manually.
+  - **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
 - **Labels** - list of colored labels of the service, specification group or specification, unique within particular entity of each type.
 - **Created When** - datetime of entity creation.
 - **Created By** - shows the user, who created an entity.
 - **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu under each service. Contains next operations:
-	- **Edit** ![Edit|20](img/edit.svg) - opens pop-up to change service name, description or set of **custom** labels.
-	- **Delete** ![Delete|20](img/delete.svg) - deletes entity.
-	- **Export** ![Upload|20](img/cloud-upload.svg) - allows to export the entity.
+  - **Edit** ![Edit|20](img/edit.svg) - opens pop-up to change service name, description or set of **custom** labels.
+  - **Delete** ![Delete|20](img/delete.svg) - deletes entity.
+  - **Export** ![Upload|20](img/cloud-upload.svg) - allows to export the entity.
 - **Control panel** - panel, placed on top of the table. Provides next capabilities:
-	- **Search field** - search box, provides ability to find respective data in the table.
-	- ![20](img/filter.svg) - opens filter pop-up.
-	- ![20](img/setting.svg) - opens pop-up with table properties that allows to adjust visibility and sequence of columns except **Name**.
-	- ![20](img/cloud-download.svg) - exports the service.
-	- ![20](img/cloud-upload.svg) - opens pop-up for service import.
-	- ![20](img/plus.svg) - provides ability to add new service.
+  - **Search field** - search box, provides ability to find respective data in the table.
+  - ![20](img/filter.svg) - opens filter pop-up.
+  - ![20](img/setting.svg) - opens pop-up with table properties that allows to adjust visibility and sequence of columns except **Name**.
+  - ![20](img/cloud-download.svg) - exports the service.
+  - ![20](img/cloud-upload.svg) - opens pop-up for service import.
+  - ![20](img/plus.svg) - provides ability to add new service.
 
 ### View Parameters
 
@@ -76,10 +76,10 @@ To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), dra
 When import is completed, system displays import result table with the following columns:
 - **Name** - name of the service participated in import operation.
 - **Status** - import status for particular service. Possible values:
-	- **Created** - new service is successfully imported.
-	- **Updated** - imported data from archive is successfully merged with existing one for particular service with matched ID.
-	- **Ignored** - service is ignored during the import.
-	- **Error** - service import failed.
+  - **Created** - new service is successfully imported.
+  - **Updated** - imported data from archive is successfully merged with existing one for particular service with matched ID.
+  - **Ignored** - service is ignored during the import.
+  - **Error** - service import failed.
 - **Message** - additional import message if it is available.
 
 ### Export Service(s)

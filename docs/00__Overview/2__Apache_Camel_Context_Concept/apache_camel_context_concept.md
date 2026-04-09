@@ -10,20 +10,23 @@ Every integration call is being processed by **QIP Integration Engine**, which i
 - **Headers** - contains headers data, either received in the request as part of headers or query parameters or created as part of the chain itself.
 - **Body** - contains body data.
 
-The main purpose of utilizing Apache Camel in Qubership Integration Platform is to provide wide set of mechanism for message parsing, data modification and complex routing while maintaining simple, understandable solution with user-friendly and convenient application. The application itself does not require deep knowledge in Apache Camel, as most of the available functionality is wrapped up into human-understandable elements, such as chain elements, entities card, etc. 
+The main purpose of utilizing Apache Camel in Qubership Integration Platform is to provide wide set of mechanism for message parsing, data modification and complex routing
+while maintaining simple, understandable solution with user-friendly and convenient application.
+The application itself does not require deep knowledge in Apache Camel,
+as most of the available functionality is wrapped up into human-understandable elements, such as chain elements, entities card, etc.
 
-![](img/camel_chain.svg)
+![Apache Camel Exchange object processing in a chain](img/camel_chain.svg)
 
 **Steps Description**
 
-| #   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Apache Camel Exchange object is being created as part of initial chain processing step. Data from request is merged into this newly created exchange object. Merge logic is described in the next table.                                                                                                                                                                                                                                                                                                                                 |
-| 2   | Path and query parameters from request are being transformed to properties and headers respectively.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 3   | Some of the chain elements are able to access and update data from every section of exchange object (properties, headers and body). Here, **Mapper** is presented as an example of such elements.                                                                                                                                                                                                                                                                                                                                        |
-| 4   | Other chain elements are only able to access specific part of exchange object. **Header Modification** chain's element is presented on the diagram as an example of element, that can only access Headers in exchange object. It can read, update, add and remove headers from the exchange.                                                                                                                                                                                                                                          |
-| 5   | Service call is a complex element, that is able to access and apply operations against any section of exchange object via different instruments:<ul><li>**Prepare Request** - can work with every section of exchange object.</li><li>**Authorization** - has access to Headers.</li><li>**Request Attempt** - makes a call to outbound service while pushing headers and body, currently available in exchange.</li><li>**Handle Response** - merges data into exchange object from response, while also having ability to update it.</li></ul> |
-| 6   | Finally, Headers and Body are being returned in response to chain's requester, while properties are being erased from the system.                                                                                                                                                                                                                                                                                                                                                                                                        |
+| # | Description |
+| --- | --- |
+| 1 | Apache Camel Exchange object is being created as part of initial chain processing step. Data from request is merged into this newly created exchange object. Merge logic is described in the next table. |
+| 2 | Path and query parameters from request are being transformed to properties and headers respectively. |
+| 3 | Some of the chain elements are able to access and update data from every section of exchange object (properties, headers and body). Here, **Mapper** is presented as an example of such elements. |
+| 4 | Other chain elements are only able to access specific part of exchange object. **Header Modification** chain's element is presented on the diagram as an example of element, that can only access Headers in exchange object. |
+| 5 | Service call can access and apply operations against any section of exchange object: **Prepare Request** works with every section; **Authorization** has access to Headers; **Request Attempt** calls outbound service pushing headers and body; **Handle Response** merges response data into exchange object. |
+| 6 | Finally, Headers and Body are being returned in response to chain's requester, while properties are being erased from the system. |
 
 **Apache Camel Exchange Object** will "accumulate" the data from Triggers, depending on their type and operable data type. Table below shows to which part **Camel Exchange Object** data from every trigger goes.
 
@@ -39,24 +42,25 @@ The main purpose of utilizing Apache Camel in Qubership Integration Platform is 
 | Scheduler        | -                          | - Scheduler's Headers<br>- Scheduler's Properties | -                                                   |
 | SDS Trigger      | -                          | - Headers<br>- Path Parameters                    | -                                                   |
 | SFTP Trigger     | -                          | -                                                 | Inbound File                                        |
+
 There are multiple chain elements, that have very specific ways of processing context data. Those specifics are described in the next respective sections.
 
 ### Split
 Diagram below shows how context data is being managed by **Split** element:
-![](img/camel_split.svg)
+![Split element context data flow diagram](img/camel_split.svg)
 
 **Steps Description**
 
-| #   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | When context data reaches ***Split*** container, it is being copied to every available Split Element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 2   | Each ***Split Element*** processes context data in parallel. Context data state will fully depend on the set of elements, used within each particular Split Element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| 3   | At the end of the processing, Split element merges context data from all branches together.<br>Merge logic:<ul><li>**JSON bodies** of several ***Split Elements*** will be aggregated into single JSON file.</li><li>**Headers**<ul><li>Headers from ***Main Split Element*** will be aggregated as-is, without any prefixes.</li><li>Headers from every ***Split Element*** with marked "Propagate headers" checkbox will be aggregated with branch's name as a prefix, separated with a dot.</li></ul></li><li>**Properties**<ul><li>Properties from ***Main Split Element*** will be aggregated as-is, without any prefixes.</li><li>Properties from every ***Split Element*** with marked "Propagate properties" checkbox will be aggregated with branch's name as a prefix, separated with a dot.</li></ul></li></ul> |
+| # | Description |
+| --- | --- |
+| 1 | When context data reaches ***Split*** container, it is being copied to every available Split Element. |
+| 2 | Each ***Split Element*** processes context data in parallel. Context data state will fully depend on the set of elements, used within each particular Split Element. |
+| 3 | Split merges context data from all branches. **JSON bodies** are aggregated into a single JSON file. **Headers/Properties** from ***Main Split Element*** are aggregated as-is; from other elements with "Propagate" checked, they are prefixed with the branch name. |
 
 ### Split Async
 Diagram below shows how context data is being managed by **Split Async** element:
 
-![](img/camel_asplit.svg)
+![Split Async element context data flow diagram](img/camel_asplit.svg)
 
 **Steps Description**
 
@@ -69,7 +73,7 @@ Diagram below shows how context data is being managed by **Split Async** element
 ### Checkpoint & Retry
 Diagrams below show how context data is being managed by **Checkpoint** element:
 
-![](img/camel_checkpoint.svg)
+![Checkpoint element context data flow diagram](img/camel_checkpoint.svg)
 
 **Steps Description**
 
@@ -81,7 +85,7 @@ Diagrams below show how context data is being managed by **Checkpoint** element:
 
 Diagrams below show how context data is being handled when **retry** is requested for failed session:
 
-![](img/camel_retry.svg)
+![Checkpoint retry context data flow diagram](img/camel_retry.svg)
 
 **Steps Description**
 
@@ -95,7 +99,7 @@ Diagrams below show how context data is being handled when **retry** is requeste
 ### Loop
 Diagram below shows how context data is being managed by **Loop** element:
 
-![](img/camel_loop.svg)
+![Loop element context data flow diagram](img/camel_loop.svg)
 
 **Steps Description**
 
@@ -108,7 +112,7 @@ Diagram below shows how context data is being managed by **Loop** element:
 ### Reuse
 Diagram below shows how context data is being managed by pair of **Reuse Reference** and **Reuse** elements:
 
-![](img/camel_reuse.svg)
+![Reuse element context data flow diagram](img/camel_reuse.svg)
 
 **Steps Description**
 
@@ -121,7 +125,7 @@ Diagram below shows how context data is being managed by pair of **Reuse Referen
 ### Condition
 Diagram below shows how context data is being managed by **Condition** element:
 
-![](img/camel_condition.svg)
+![Condition element context data flow diagram](img/camel_condition.svg)
 
 **Steps Description**
 
@@ -134,7 +138,7 @@ Diagram below shows how context data is being managed by **Condition** element:
 ### Try-Catch-Finally
 Diagram below shows how context data is being managed by **Try-Catch-Finally** element:
 
-![](img/camel_tcf.svg)
+![Try-Catch-Finally element context data flow diagram](img/camel_tcf.svg)
 
 **Steps Description**
 
@@ -148,7 +152,7 @@ Diagram below shows how context data is being managed by **Try-Catch-Finally** e
 ### Circuit Breaker
 Diagram below shows how context data is being managed by **Circuit Breaker** element in case of sunny-day scenario:
 
-![](img/camel_cb.svg)
+![Circuit Breaker sunny-day scenario diagram](img/camel_cb.svg)
 
 **Steps Description**
 
@@ -159,7 +163,7 @@ Diagram below shows how context data is being managed by **Circuit Breaker** ele
 
 Diagram below shows how context data is being managed by **Circuit Breaker** element in case of rainy-day scenario, when fallback detected:
 
-![](img/camel_cb_fallback.svg)
+![Circuit Breaker rainy-day fallback scenario diagram](img/camel_cb_fallback.svg)
 
 
 **Steps Description**
