@@ -29,7 +29,7 @@ Please find the description for all available tools below:
 
 The next actions are available upper right corner:
 
-<u>_Web UI_</u>
+#### Web UI
 
 * ⭾ - show sequence diagram based on the chain.
 * ![Download|20](img/cloud-download.svg) - export chain. During export, you can adjust the data to be downloaded using the following checkboxes in the dialog window. All checkboxes are unchecked by default:
@@ -39,7 +39,7 @@ The next actions are available upper right corner:
 * ![Send|20](img/send.svg) - save and deploy the chain.
 
 
-<u>_VS Code Extension_</u>
+#### VS Code Extension
 
 * ⭾ - show sequence diagram based on the chain.
 

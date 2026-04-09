@@ -87,16 +87,6 @@ Parameters in sections below are either predefined for selected type of service 
 | Query          | M         | String    | GraphQL query, required to be executed.<br><br>ℹ️ **Note:** More than one query or mutation can be entered at the same time. | N/A           |
 | Variables JSON | O         | String    | The JsonObject instance, that contains the operation variables. Camel Exchange variables can also be used.                  | N/A           |
 
-<style>
-summary {
-  display: list-item;
-  list-style: disclosure-closed inside;
-  cursor: pointer;
-}
-details[open] > summary {
-  list-style: disclosure-open inside;
-}
-</style>
 <details open><summary>Query sample</summary>
 
 ```graphql
@@ -146,123 +136,37 @@ The tab is responsible for choosing an action on receiving the request. Possible
 - **Scripting** - groovy script (specified in the code block) will be executed on request. More additional information available in [Script](../../5__Transformation/1__Script/script.md).
 
     > ℹ️ **Note:** **Some element's details are stored in Camel Exchange properties** and available for usage locally via every "Scripting" module under the Service Call. Such properties (specific ones for the protocol) are listed in the next table (click on the expandable section below):
-    >  <details><summary>Service Call exchange properties</summary>   <table cellspacing="2" border="1" cellpadding="5">
-    >     <thead>
-    >        <tr>
-    >            <th>Protocol</th>
-    >            <th>Property name</th>
-    >            <th>Property description</th>
-    >        </tr>
-    >    </thead>
-    >    <tbody>
-    >        <tr>
-    >            <td rowspan="7"> <strong>HTTP</strong> </td>
-    >            <td>serviceCallMethod</td>
-    >            <td>HTTP method</td>
-    >        </tr>
-	>            <td>serviceCallSkipEmptyQueryParams</td>
-    >            <td>Property indicates whether the "Skip empty query parameters" option in Service Call element is checked/unchecked.</td>
-    >        </tr>
-    >        <tr>
-    >            <td>serviceCallUrl</td>
-    >            <td>Constructed URL for HTTP call<br><br>ℹ️ **Note:** If **"Skip empty query parameters"** option is checked, any query parameters specified will be excluded from the constructed URL.<br> In case above option is unchecked, all specified query parameters *(including parameters having null/empty values)* will be included in the constructed URL.
-	                </td>
-            </tr>
-             <tr>
-                <td>serviceCallAddress</td>
-                <td>Address part of an URL, resolved from service environment</td>
-            </tr>
-             <tr>
-                <td>serviceCallPath</td>
-                <td>Path for operation with path parameters placeholders</td>
-            </tr>
-             <tr>
-                <td>serviceCallQueryParameter_&lt;parameter&gt;</td>
-                <td>Property for each query parameter, where &lt;parameter&gt; substring is a pure query param name (e.g. *serviceCallQueryParameter_limit*)</td>
-            </tr>
-             <tr>
-                <td>serviceCallPathParameter_&lt;parameter&gt;</td>
-                <td>Property for each path parameter, where &lt;parameter&gt; substring is a pure path param name (e.g. *serviceCallQueryParameter_orders*)</td>
-            </tr>
-             <tr>
-                <td>serviceCallParameter_&lt;parameter&gt;</td>
-                <td>Property for each additional service call parameter, where &lt;parameter&gt; substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*)</td>
-            </tr>
-            <tr>
-                <td rowspan="4"><strong>Kafka</strong></td>
-                <td>serviceCallMethod</td>
-                <td>AsyncAPI operation method</td>
-            </tr>
-            <tr>
-                <td>serviceCallTopic</td>
-                <td>Kafka topic name</td>
-            </tr>
-            <tr>
-                <td>serviceCallBrokers</td>
-                <td>Kafka brokers</td>
-            </tr>
-            <tr>
-                <td>serviceCallParameter_&lt;parameter&gt;</td>
-                <td>Property for each additional service call parameter, where &lt;parameter&gt; substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*)</td>
-            </tr>
-             <tr>
-                <td rowspan="4"><strong>AMQP</strong></td>
-                <td>serviceCallMethod</td>
-                <td>AsyncAPI operation method</td>
-            </tr>
-            <tr>
-                <td>serviceCallExchange</td>
-                <td>RabbitMQ exchange name</td>
-            </tr>
-            <tr>
-                <td>serviceCallAddress</td>
-                <td>Server addresses</td>
-            </tr>
-            <tr>
-                <td>serviceCallParameter_&lt;parameter&gt;</td>
-                <td>Property for each additional service call parameter, where &lt;parameter&gt; substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*)</td>
-            </tr>
-            <tr>
-                <td rowspan="4"><strong>gRPC</strong></td>
-                <td>serviceCallMethod</td>
-                <td>Service method to call</td>
-            </tr>
-            <tr>
-                <td>serviceCallService</td>
-                <td>Service name</td>
-            </tr>
-            <tr>
-                <td>serviceCallAddress</td>
-                <td>Server address</td>
-            </tr>
-            <tr>
-                <td>serviceCallParameter_&lt;parameter&gt;</td>
-                <td>Property for each additional service call parameter, where &lt;parameter&gt; substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*)</td>
-            </tr>
-            <tr>
-                <td rowspan="5"><strong>GraphQL</strong></td>
-                <td>serviceCallAddress</td>
-                <td>Server address</td>
-            </tr>
-            <tr>
-                <td>serviceCallMethod</td>
-                <td>HTTP method</td>
-            </tr>
-            <tr>
-                <td>serviceCallPath</td>
-                <td>Operation path</td>
-            </tr>
-            <tr>
-                <td>serviceCallQueryParameter_&lt;parameter&gt;</td>
-                <td>Property for each query parameter, where &lt;parameter&gt; substring is a pure query param name (e.g. *serviceCallQueryParameter_operationName*)</td>
-            </tr>
-            <tr>
-                <td>serviceCallParameter_&lt;parameter&gt;</td>
-                <td>Property for each additional service call parameter, where &lt;parameter&gt; substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*)</td>
-            </tr>
-        </tbody>
-   ></table>   
-  ></details>
+    >  <details><summary>Service Call exchange properties</summary>
+    >
+    >  | Protocol | Property name | Property description |
+    >  | --- | --- | --- |
+    >  | **HTTP** | serviceCallMethod | HTTP method |
+    >  | **HTTP** | serviceCallSkipEmptyQueryParams | Property indicates whether the "Skip empty query parameters" option in Service Call element is checked/unchecked. |
+    >  | **HTTP** | serviceCallUrl | Constructed URL for HTTP call<br><br>ℹ️ **Note:** If **"Skip empty query parameters"** option is checked, any query parameters specified will be excluded from the constructed URL.<br> In case above option is unchecked, all specified query parameters *(including parameters having null/empty values)* will be included in the constructed URL. |
+    >  | **HTTP** | serviceCallAddress | Address part of an URL, resolved from service environment |
+    >  | **HTTP** | serviceCallPath | Path for operation with path parameters placeholders |
+    >  | **HTTP** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_limit*) |
+    >  | **HTTP** | serviceCallPathParameter_<parameter> | Property for each path parameter, where <parameter> substring is a pure path param name (e.g. *serviceCallQueryParameter_orders*) |
+    >  | **HTTP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    >  | **Kafka** | serviceCallMethod | AsyncAPI operation method |
+    >  | **Kafka** | serviceCallTopic | Kafka topic name |
+    >  | **Kafka** | serviceCallBrokers | Kafka brokers |
+    >  | **Kafka** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    >  | **AMQP** | serviceCallMethod | AsyncAPI operation method |
+    >  | **AMQP** | serviceCallExchange | RabbitMQ exchange name |
+    >  | **AMQP** | serviceCallAddress | Server addresses |
+    >  | **AMQP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    >  | **gRPC** | serviceCallMethod | Service method to call |
+    >  | **gRPC** | serviceCallService | Service name |
+    >  | **gRPC** | serviceCallAddress | Server address |
+    >  | **gRPC** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    >  | **GraphQL** | serviceCallAddress | Server address |
+    >  | **GraphQL** | serviceCallMethod | HTTP method |
+    >  | **GraphQL** | serviceCallPath | Operation path |
+    >  | **GraphQL** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_operationName*) |
+    >  | **GraphQL** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    >
+    >  </details>
 
 - **Mapping** - specific mapping rules will be applied on request, with no possibility to edit schemes, that come with service call. More additional information available in [Mapper](../../5__Transformation/2__Mapper/mapper.md).
 

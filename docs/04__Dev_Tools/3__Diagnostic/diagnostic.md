@@ -1,6 +1,6 @@
 # Diagnostic (Web UI only)
 
-> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
+> 🚫 This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -51,10 +51,10 @@ Navigate to Admin Tools and then "Diagnostic page" tab. Select required validati
 - **Deprecated elements found in the chain** - rule allows to find chains with deprecated elements.
 - **Large number of snapshots** - rule allows to check the number of snapshots that older than configured value.
 - **Multiple async consumers found in the chain** - rule allows to detect chains with identical asynchronous consumers (2 or more). Duplication check is performing by following parameters of Kafka/RabbitMQ/AsyncAPI Trigger according to chosen protocol and connection source type:
-	- Kafka (manual) - combination of <u>_Topic_</u> & <u>_Group ID_</u> is equal in the chains.
-	- RabbitMQ (manual) - <u>_Queue(s) Name_</u> is equal in the chains.
-	- Kafka (MaaS) - combination of <u>_Topic Classifier Name_</u>, <u>_Classifier Namespace_</u> and <u>_Group ID_</u> is equal in the chains.
-	- RabbitMQ (MaaS) - combination of <u>_Vhost Maas Classifier Name_</u>, <u>_Classifier Namespace_</u> and <u>_Queue(s) Name_</u> is equal in the chains.
+	- Kafka (manual) - combination of **Topic** & **Group ID** is equal in the chains.
+	- RabbitMQ (manual) - **Queue(s) Name** is equal in the chains.
+	- Kafka (MaaS) - combination of **Topic Classifier Name**, **Classifier Namespace** and **Group ID** is equal in the chains.
+	- RabbitMQ (MaaS) - combination of **Vhost Maas Classifier Name**, **Classifier Namespace** and **Queue(s) Name** is equal in the chains.
 - **Scripting found in the chain** - rule allows to find chains and chain elements which contain scripting.
 - **Sub-chain is used by single chain or not used at all** - rule allows to find chains which were not used in other chains, or they were used only once.
 - **Timeout is empty** - rule allows to find chain elements with empty timeout value.

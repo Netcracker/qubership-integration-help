@@ -1,6 +1,6 @@
 # Import Instructions [Web UI only]
 
-> ⚠️ **Warning:** This functionality is not available via the VS Code Extension.
+> 🚫 This functionality is not available via the VS Code Extension.
 
 ## Description
 
@@ -65,7 +65,7 @@ chains:
     - "dd1cb5a6-ada9-44cb-b55d-da1fd97c1faa"                 #chain_id1
   override:
     - id: "e11350f6-178c-423c-8665-18c23b9e7e69"             #original_chain_id
-    overriddenBy: "f9b41719-e7b1-4f2b-99b6-5899bebb858b"     #new_chain_id
+  overriddenBy: "f9b41719-e7b1-4f2b-99b6-5899bebb858b"     #new_chain_id
   ignore: []
 services:
   delete:

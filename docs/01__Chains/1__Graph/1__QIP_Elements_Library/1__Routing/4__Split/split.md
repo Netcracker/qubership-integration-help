@@ -35,7 +35,7 @@ Main Split Element is using as the main branch, which will always propagate all 
 #### Common Parameters
 | Parameter  | Mandatory | Data Type | Description                                                             | Sample    |
 | ---------- | :-------- | :-------- | ----------------------------------------------------------------------- | --------- |
-| Split Name | M         | String    | Defines the name of the branch. Must be <b>unique</b> within the chain. | Subchain1 |
+| Split Name | M         | String    | Defines the name of the branch. Must be **unique** within the chain. | Subchain1 |
 
 #### Metadata
 | Parameter   | Mandatory | Data Type | Description                              | Sample                        |

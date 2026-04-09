@@ -11,8 +11,11 @@ Configuration of this element must follow simple aspects:
 - **Finally** block must contain part of the chain, that is going to be executed at the end of Try-Catch-Finally processing. This part will always be executed, whether an error occurred or not.
 
 
->ℹ️Note: One of the options of accessing error details, captured by **Catch** block, would be using next string in the **Script** element:
-><pre style="background-color: #F5F5F7;"><code style="color: #000;">exception = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class)</code></pre>
+> ℹ️ **Note:** One of the options of accessing error details, captured by **Catch** block, would be using next string in the **Script** element:
+
+```groovy
+exception = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class)
+```
 
 ## User Interface
 
@@ -56,6 +59,6 @@ Configuration of this element must follow simple aspects:
 
 ---
 Please consider next constraints:
-- Only one **Try** module should be used in **Try-Catch-Finally**.
+- Only one **Try** module should be used in **ch-Finally**.
 - One or more **Catch** modules have to be used.
-- More than one **Finally** element module can not be used in **Try-Catch-Finally**. **Try-Catch-Finally** also can proceed without **Finally** module.
+- More than one **Finally** element module can not be used in **ch-Finally**. **ch-Finally** also can proceed without **Finally** module.

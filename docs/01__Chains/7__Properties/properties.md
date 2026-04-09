@@ -6,10 +6,10 @@ This tab allows to fill in the properties such name of the chain and choose the 
 
 ## User Interface
 
-----
+---
 Properties are the following:
 
-<u>_Web UI_</u>
+#### Web UI
 
 * Name - The user-defined identifier for the chain.
 * Path - defined URL.
@@ -19,7 +19,7 @@ Properties are the following:
 * Assumptions - Allowances that must be true for this chain to work.
 * Out of Scope - Statements not covered by the chain.
 
-<u>_VS Code Extension_</u>
+#### VS Code Extension
 
 * Name - The user-defined identifier for the chain.
 * Labels - Tags used for categorization or filtering.
