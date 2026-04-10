@@ -26,6 +26,7 @@ Before the Loop module, it is recommended to set a property with the condition t
 | Maximum iteration count           | O         | Number    | Maximum number of loop iterations. This parameter allows to avoid unexpected cases, caused by infinite loop.                                                                                                                                                                                                                                                                                                              | 100                                                                                                                                                                                                                                                    |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                              | Sample                    |
 | ----------- | :-------- | :-------- | ---------------------------------------- | ------------------------- |
 | Name        | M         | String    | Name of the element.                     | Loop                      |

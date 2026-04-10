@@ -16,6 +16,7 @@
 | Cron expression | M         | String    | Specifies a time interval via Quartz cron syntax. | 0/50 * * * * ? |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                                                | Sample                                         |
 | ----------- | :-------- | :-------- | ---------------------------------------------------------- | ---------------------------------------------- |
 | Name        | M         | String    | Name of the element.                                       | Scheduler                                      |

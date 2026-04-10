@@ -22,28 +22,28 @@ Table with Implemented services is accessible by navigating to **Services** → 
 - **Name** - clickable name of the service or specification group. When clicked, system navigates to respective entity.
 - **Protocol** - service's integration protocol. Possible values: **_http, soap, kafka, amqp, graphql, grpc_**. Value for this parameter will be propagated from the firstly imported API specification. There is no ability to upload API specifications with another protocol after that.
 - **Status** - API Specification status. Possible values:
-	- 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
-	- 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
-	- 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
+  - 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
+  - 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
+  - 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 - **Source** - specifies the way specification was created. Possible values:
-	- **Manual** - uploaded manually.
-	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+  - **Manual** - uploaded manually.
+  - **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
 - **Labels** - list of colored labels of the service, specification group or specification, unique within particular entity of each type.
 - **Created When** - datetime of entity creation.
 - **Created By** - shows the user, who created an entity.
 - **Actions menu** - list of operations, accessed via ![More|20](img/more.svg) menu under each service. Contains next operations:
-	- **Edit** ![Edit|20](img/edit.svg) - opens pop-up to change service name, description or set of **custom** labels.
-	- **Delete** ![Delete|20](img/delete.svg) - deletes entity.
-	- **Expand All** ![Column height|20](img/column-height.svg) - fully expands the entity.
-	- **Collapse All** ![Vertical align middle|20](img/vertical-align-middle.svg) - fully collapses the entity.
-	- **Export** ![Upload|20](img/cloud-upload.svg) - allows to export the entity.
+  - **Edit** ![Edit|20](img/edit.svg) - opens pop-up to change service name, description or set of **custom** labels.
+  - **Delete** ![Delete|20](img/delete.svg) - deletes entity.
+  - **Expand All** ![Column height|20](img/column-height.svg) - fully expands the entity.
+  - **Collapse All** ![Vertical align middle|20](img/vertical-align-middle.svg) - fully collapses the entity.
+  - **Export** ![Upload|20](img/cloud-upload.svg) - allows to export the entity.
 - **Control panel** - panel, placed on top of the table. Provides next capabilities:
-	- **Search field** - search box, provides ability to find respective data in the table.
-	- ![20](img/filter.svg) - opens filter pop-up.
-	- ![20](img/setting.svg) - opens pop-up with table properties that allows to adjust visibility and sequence of columns except **Name**.
-	- ![20](img/cloud-download.svg) - exports the service.
-	- ![20](img/cloud-upload.svg) - opens pop-up for service import.
-	- ![20](img/plus.svg) - provides ability to add new service.
+  - **Search field** - search box, provides ability to find respective data in the table.
+  - ![20](img/filter.svg) - opens filter pop-up.
+  - ![20](img/setting.svg) - opens pop-up with table properties that allows to adjust visibility and sequence of columns except **Name**.
+  - ![20](img/cloud-download.svg) - exports the service.
+  - ![20](img/cloud-upload.svg) - opens pop-up for service import.
+  - ![20](img/plus.svg) - provides ability to add new service.
 
 ### View Parameters
 
@@ -52,10 +52,13 @@ When service is clicked, system shows Parameters tab with the following informat
 - Description - description of service.
 - Protocol - service's integration protocol.
 - Type - type of service. Possible values:
-	- External;
-	- Internal;
-	- Implemented.
-- Labels - list of colored labels of the service, specification group or specification, unique within particular entity of each type. It might contain **custom** labels, entered by user via Qubership Integration Platform UI or **technical** labels, populated as part of the **deployment via Samples Repository**. Custom labels can be added or removed clicking on the field. **Technical** labels cannot be updated manually.
+  - External;
+  - Internal;
+  - Implemented.
+- Labels - list of colored labels of the service, specification group or specification, unique within particular entity of each type.
+  It might contain **custom** labels, entered by user via Qubership Integration Platform UI or **technical** labels,
+  populated as part of the **deployment via Samples Repository**. Custom labels can be added or removed clicking on the field.
+  **Technical** labels cannot be updated manually.
 
 For _Web UI_ there are some additional information:
 
@@ -66,12 +69,12 @@ For _Web UI_ there are some additional information:
 
 - **Name** - clickable name of the specification group or specification. When clicked, system navigates to respective entity.
 - **Status** - API Specification status. Possible values:
-	- 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
-	- 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
-	- 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
+  - 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
+  - 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
+  - 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 - **Source** - specifies the way specification was created. Possible values:
-	- **Manual** - uploaded manually.
-	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+  - **Manual** - uploaded manually.
+  - **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
 - **Labels** - list of colored labels of the specification group, unique within particular specification group.
 - **Used By** - expand, that contains the list of chains, where specification is being utilized. Each chain name under this expand is clickable and navigates to respective configuration graph.
 - **Created When** - datetime of entity creation.
@@ -101,14 +104,17 @@ In general at the right top the next operations are available:
 
 When particular specification group name is clicked, system opens new page with the table of available specifications for clicked group. Next columns and elements are available for the table:
 
-- **Name** - specification name, which is also considered as a version. Specification name **must be unique** inside of API Specification group for any type of service. For **Swagger** and **AsyncAPI** specifications version is retrieving from appropriate _"version"_ parameter in specification file. For **WSDL, GraphQL, Protobuf** specifications - _filename_ will be considered as a specification version.
+- **Name** - specification name, which is also considered as a version. Specification name **must be unique** inside of
+  API Specification group for any type of service. For **Swagger** and **AsyncAPI** specifications version is retrieving
+  from appropriate _"version"_ parameter in specification file. For **WSDL, GraphQL, Protobuf** specifications -
+  _filename_ will be considered as a specification version.
 - **Status** - API Specification status. Possible values:
-	- 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
-	- 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
-	- 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
+  - 🔵 _**New**_ - initial state of API specification, uploaded manually or imported by service discovery.
+  - 🟢 _**In Use**_ - status indicates that API Specification is utilized within at least one chain.
+  - 🔴 _**Deprecated**_ - this status indicates that such specification is outdated and won't be available for selection in newly added chain elements. Old elements, where specification with this status is already selected may still continue using it.
 - **Source** - specifies the way specification was created. Possible values:
-	- **Manual** - uploaded manually.
-	- **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
+  - **Manual** - uploaded manually.
+  - **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.
 - **Labels** - list of colored labels of the specification.
 - **Used By** - expand, that contains the list of chains, where specification is being utilized. Each chain name under this expand is clickable and navigates to respective configuration graph.
 - **Method** - method of the operation, mentioned in the specification (GET, POST, etc.)
@@ -138,7 +144,12 @@ In general at the right top the next operations are available:
 
 When specification is clicked, system opens new page with the table of available operations for clicked specifications. Next columns and elements are available for the table:
 
-- **Name** - Clickable short operation name. If the name has not been found in the initial specification, The system generates its own name by concatenating **method** with the first found **entity**, identified in the **path** (parameters, mentioned in the **{ }** are ignored). Resulted name will be put in square brackets (e.g. for method **GET** and path **/api/v1/test/config**, the name will be [getConfig]). When clicked, system shows **"Operation info"** window with available details for specification and request/response schemes.
+- **Name** - Clickable short operation name. If the name has not been found in the initial specification,
+  the system generates its own name by concatenating **method** with the first found **entity**,
+  identified in the **path** (parameters, mentioned in the **{ }** are ignored).
+  Resulted name will be put in square brackets (e.g. for method **GET** and path **/api/v1/test/config**,
+  the name will be [getConfig]). When clicked, system shows **"Operation info"** window with available details
+  for specification and request/response schemes.
 - **Method** - method of the operation, mentioned in the specification (GET, POST, etc.)
 - **URL** - operation path.
 - **Used by** - list, that contains references to the chains, utilizing this operation.
@@ -167,8 +178,8 @@ To add specification group to Implemented service:
 2. Specify the **name** of the specification group on the opened pop-up.
 3. There are two options to add API Specification:
     - **Import File** - on this tab you can import file with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
-	- **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
-> ℹ️ **Note:** Via checkbox ***"External routes only"*** it is possible to control showing only respective [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) in the list.
+    - **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
+> ℹ️ **Note:** Via checkbox _**"External routes only"**_ it is possible to control showing only respective [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) in the list.
 
 4. Confirm operation with **"Create"** button.
 
@@ -180,10 +191,10 @@ To add API specification into existing specification group:
 1. Select ![Upload|20](img/cloud-upload.svg) "**Import Specifications**" option for desired group.
 2. There are two options to add API Specification:
     - **Import File** - on this tab you can import file with API specification by dragging it to the **"drop"** window or by using **"browse"** option.
-	> ℹ️ **Note:** API Specification **version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.
-	
+    > ℹ️ **Note:** API Specification **version must be unique inside of API Specification group for any type of service**. Import of API Specification with non-unique version will result in version duplication error.
+
     - **Import from Chains** - on this tab, it is possible to select existing [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) endpoint, configured within a particular chain and create API Specification from it.
-    > ℹ️ **Note:** Checked ***"External routes only"*** parameter allows to create specification only from chains with external [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md).
+    > ℹ️ **Note:** Checked _**"External routes only"**_ parameter allows to create specification only from chains with external [HTTP Triggers](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md).
 1. Confirm operation with **"Create"** button.
 
 ### Add Environment
@@ -206,12 +217,12 @@ Below you can find the detailed information of all available parameters for the 
 - **Name** - mandatory name for environment.
 - **Address** - defines the first part of the path for given chain. Base path and operation under the related HTTP Trigger form the finalized endpoint.
 - **Properties** - section to manage properties for the environment:
-    - To add new property, click the icon ![Caret down|20](img/caret-down.svg) near the section **"Properties"**, press button ![Plus|20](img/plus.svg), enter suitable data and click **Save** button.
-    - To bulk create/update of environment properties, turn on the slider **"Show as Key Value"**, put pairs of property name and value and click **`Enter`**. See the format below:
-      ```
-      property1_name=property1_value;
-      property2_name=property2_value;
-      ```
+  - To add new property, click the icon ![Caret down|20](img/caret-down.svg) near the section **"Properties"**, press button ![Plus|20](img/plus.svg), enter suitable data and click **Save** button.
+  - To bulk create/update of environment properties, turn on the slider **"Show as Key Value"**, put pairs of property name and value and click **`Enter`**. See the format below:
+    ```text
+    property1_name=property1_value;
+    property2_name=property2_value;
+    ```
 
 Default properties are described below:
 
@@ -238,29 +249,39 @@ When environment is saved, its updated card will be available under the environm
 
 > 🚫 This functionality is not available via the VS Code Extension.
 
-To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area or click **"browse"** link and select **single** file with respective format from the explorer menu. When appropriate file is added to the window, click **"Import"** button to start the import process. API Specification version in archive **must be unique** for each API Specification. During the import, system follows next logic:
+To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area
+or click **"browse"** link and select **single** file with respective format from the explorer menu.
+When appropriate file is added to the window, click **"Import"** button to start the import process.
+API Specification version in archive **must be unique** for each API Specification.
+During the import, system follows next logic:
 - Verify Import Instructions, saved in the system. Proceed with the step below only if they exist:
-    - Fetch the list of service ids with **ignore** action and skip import process for them.
+  - Fetch the list of service ids with **ignore** action and skip import process for them.
 - Find existing services, specification groups and specification by ids from import archive:
-    - If there are specifications with ids already exist in the system, regardless of their parent specification groups and services, system **ignores** them.
-    - If system already has entities with ids, specified in import archive:
-        - Merge data from archive, including **custom labels**, into existing entities.
-        - Technical labels are going to be removed from existing entities if they are updated as a part of import process.
+  - If there are specifications with ids already exist in the system, regardless of their parent specification groups and services, system **ignores** them.
+  - If system already has entities with ids, specified in import archive:
+    - Merge data from archive, including **custom labels**, into existing entities.
+    - Technical labels are going to be removed from existing entities if they are updated as a part of import process.
 > ℹ️ **Note:** If import is done as a part of deployment process or it is initiated directly via API with **corresponding headers**, the current set of technical labels is **always overridden** by the values, received from import archive. This might lead to technical labels to be removed from existing entities if imported file has no corresponding technical labels for them.
 - Otherwise, if entities, that are being imported, don't exist, they are going to be created with the next specifics:
-    - For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
-    - For **Swagger** system will build specification version from "version" parameter in specification file.
+  - For all new services system will increment standard UUID, so it is possible to operate with it in order to maintain services uniqueness.
+  - For **Swagger** system will build specification version from "version" parameter in specification file.
 
-> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files properly structured within the archive, according to the native logic, described in public **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed to the folders, fully corresponding to the path, described in **"import"** statements of the files. For example, when protobuf file **proto_1** has a statement "***import test/proto/types/active/proto_2.proto***", it means that **proto_2** file must be placed to "***test/proto/types/active/***" folder in the archive.
+> ⚠️ **Warning:** When importing **grpc** services, it is absolutely required to have protobuf files properly
+> structured within the archive, according to the native logic, described in public
+> **Protocol Buffers Documentation Language Guide (proto 3)**. Following this logic, protobuf files must be placed
+> to the folders, fully corresponding to the path, described in **"import"** statements of the files.
+> For example, when protobuf file **proto_1** has a statement
+> "_**import test/proto/types/active/proto_2.proto**_", it means that **proto_2** file must be placed
+> to "_**test/proto/types/active/**_" folder in the archive.
 
 When import is completed, system displays import result table with the following columns:
 
 - **Name** - name of the service participated in import operation.
 - **Status** - import status for particular service. Possible values:
-    - **Created** - new service is successfully imported.
-    - **Updated** - imported data from archive is successfully merged with existing one for particular service with matched ID.
-    - **Ignored** - service is ignored during the import.
-    - **Error** - service import failed.
+  - **Created** - new service is successfully imported.
+  - **Updated** - imported data from archive is successfully merged with existing one for particular service with matched ID.
+  - **Ignored** - service is ignored during the import.
+  - **Error** - service import failed.
 - **Message** - additional import message if it is available.
 
 ### Export Service(s)

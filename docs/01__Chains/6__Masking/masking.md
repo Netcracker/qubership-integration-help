@@ -21,7 +21,7 @@ The table of masking fields consists of the following columns and elements:
 
 #### VS Code Extension
 
--  **Field** - masking field's name, that is going to be masked. For editing, hover the cursor over the name and click on it.
+- **Field** - masking field's name, that is going to be masked. For editing, hover the cursor over the name and click on it.
 
 ### Add Field for Masking
 

@@ -20,14 +20,14 @@ There is a **"Snapshots"** tab, available for each particular chain. By navigati
 - **Modified By** - username of snapshot modification.
 - **Modified At** - the datetime of snapshot modification.
 - **Actions menu** - list of operations, accessed via ![20](img/more.svg) menu. Contains next operations:
-	- ![Delete|20](img/delete.svg) **Delete** - deletes snapshot(s).
-	- ![Rollback|20](img/rollback.svg)**Revert Snapshot** - reverts to the selected snapshot version.
-	- ![File text|20](img/file-text.svg)**Show XML** - opens pop-up with XML definition for the snapshot.
-	- ⭾ **Show Diagram** - opens snapshot sequence diagram.
+  - ![Delete|20](img/delete.svg) **Delete** - deletes snapshot(s).
+  - ![Rollback|20](img/rollback.svg)**Revert Snapshot** - reverts to the selected snapshot version.
+  - ![File text|20](img/file-text.svg)**Show XML** - opens pop-up with XML definition for the snapshot.
+  - ⭾ **Show Diagram** - opens snapshot sequence diagram.
 - **Control panel** - panel, placed on the top of the table. Provides next capabilities:
-	- ![20](img/plus.svg) - allows to create new snapshot.
-	- ![20](img/delete.svg) - deletes the snapshot(s), selected via checkbox.
-	- ⇄ - compares selected snapshots.
+  - ![20](img/plus.svg) - allows to create new snapshot.
+  - ![20](img/delete.svg) - deletes the snapshot(s), selected via checkbox.
+  - ⇄ - compares selected snapshots.
 
 
 ### Create Snapshot
@@ -36,7 +36,7 @@ To create snapshot, click button ![20](img/plus.svg). If chain graph is valid, s
 
 ### Delete Snapshot
 
-To delete snapshot(s), mark all suitable rows with ticks in the snapshot table view and click ![Delete|20](img/delete.svg) on control panel or select "**Delete**" option in actions menu for each row. 
+To delete snapshot(s), mark all suitable rows with ticks in the snapshot table view and click ![Delete|20](img/delete.svg) on control panel or select "**Delete**" option in actions menu for each row.
 
 > ℹ️ **Note**: Besides the UI option for manual deletion, a scheduled task automatically deletes snapshots older that the configured interval *(default is set to 14 days)*. Once deleted, these snapshots cannot be restored.
 

@@ -9,7 +9,10 @@ Session represents chain processing step by step. Chain session is being created
 
 ### Async Request & Callback Linkage in Sessions
 
-There are technical specifics available for asynchronous integrations, that can cause losing linkage between request and callback. Due to the fact that callback for such integration type is being provided with a significant delay, it leads to the challenges related to identifying of the original request. To deal with this challenge, Qubership Integration Platform links request and callbacks with correlation id. This also gives an ability to group up sessions with the same id on the table **"Sessions"**, available for each chain.
+There are technical specifics available for asynchronous integrations, that can cause losing linkage between request and callback.
+Due to the fact that callback for such integration type is being provided with a significant delay, it leads to the challenges related to identifying of the original request.
+To deal with this challenge, Qubership Integration Platform links request and callbacks with correlation id.
+This also gives an ability to group up sessions with the same id on the table **"Sessions"**, available for each chain.
 
 Correlation id can be passed by the following chain modules:
 - [HTTP Trigger](../1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md)
@@ -32,11 +35,11 @@ Table contains current chain's sessions, aggregated by correlation identifier, i
 
 - **ID** - generated session UUID. The parameter value is clickable.
 - **Status** - status of the session. Possible values:
-	- 🟢 _**Completed Normally**_ - session has been completed without issues. 
-	- 🔴 _**Completed with Errors**_ - session failed. Error details are available on tab "Errors" under failed session element.
-	- 🟡 _**Completed With Warnings**_ - session has been completed with warnings or exceptions, successfully handled within proper elements, such as try-catch-finally, etc. Error details are also available on tab "Errors" under failed session element.
-	- 🔵 _**In Progress**_ - session is in progress. Finalized status will be available in some time.
-	- ⚫ _**Cancelled Or Unknown**_ - session processing has been interrupted by chain itself. For example, this status might indicate that one of the Split element branches failed while this element has option "Stop On Exception" selected, which caused interruption of all other branches.
+  - 🟢 _**Completed Normally**_ - session has been completed without issues.
+  - 🔴 _**Completed with Errors**_ - session failed. Error details are available on tab "Errors" under failed session element.
+  - 🟡 _**Completed With Warnings**_ - session has been completed with warnings or exceptions, successfully handled within proper elements, such as try-catch-finally, etc. Error details are also available on tab "Errors" under failed session element.
+  - 🔵 _**In Progress**_ - session is in progress. Finalized status will be available in some time.
+  - ⚫ _**Cancelled Or Unknown**_ - session processing has been interrupted by chain itself. For example, this status might indicate that one of the Split element branches failed while this element has option "Stop On Exception" selected, which caused interruption of all other branches.
 - **Start Time** - start datetime of the session.
 - **Finish Time** - finish datetime of the session
 - **Session level** - shows level of logging for specific session.
@@ -45,12 +48,11 @@ Table contains current chain's sessions, aggregated by correlation identifier, i
     > ℹ️ **Note**: **After manual [snapshot](../2__Snapshots/snapshots.md) renaming, current parameter's value will not be updated automatically (even for the new sessions)**. To see updated snapshot name, it is required to redeploy the chain.
 - **Engine** - name of the session engine domain with pod address (without port) in parentheses.
 - **Control panel** - panel, placed on top of the table. Provides next capabilities:
-	- **Search field** - search box, provides ability to find particular session(s) by body field name, body field value, header name or header value.
+  - **Search field** - search box, provides ability to find particular session(s) by body field name, body field value, header name or header value.
     > ℹ️ **Note**: When searching for long or complex entity name, please consider specifying its **full name** or **first part of the name** for proper search result.
-    
-	- ![20](img/delete.svg) - deletes selected session(s).
-	- ![20](img/cloud-download.svg) - exports the session.
-	- ![20](img/redo.svg) - refreshes session table.
+  - ![20](img/delete.svg) - deletes selected session(s).
+  - ![20](img/cloud-download.svg) - exports the session.
+  - ![20](img/redo.svg) - refreshes session table.
 
 ### Session view
 

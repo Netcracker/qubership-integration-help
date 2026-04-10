@@ -43,12 +43,12 @@ To expand the domain tree and **see child engines**, click ![20](img/down.svg) i
 - **Engine** - engine name.
 - **Pod address** - address of the Pod for Engine.
 - **State** - state of Pod. Possible values:
-	- 🟡 _Not Ready_
-	- 🟢 _Ready_
+  - 🟡 _Not Ready_
+  - 🟢 _Ready_
 - **Pod status** - status of the Pod. Possible values:
-	- 🟡 _Pending_
-	- 🟢 _Running_
-	- 🔴 _Failed_
+  - 🟡 _Pending_
+  - 🟢 _Running_
+  - 🔴 _Failed_
 - ![20](img/down.svg) - expands/collapses the engine card.
 
 ### Chain Deployment Card View

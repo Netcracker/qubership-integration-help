@@ -64,7 +64,7 @@ To add a header, simply click **"Add"** button, then specify header's name and v
 
 This tab allows setting idempotent behavior in order to avoid processing of the same message by one consumer (especially relevant for Blue-Green deployment approach). The Exchange which has the same idempotency key is regarded as a duplicate. Duplication check is performing on full idempotency key, which has the following structure:
 
-```
+```text
 <idempotency-key> = dupcheck:<context-expression>:<key-expression>
 ```
 
@@ -86,11 +86,13 @@ The following parameters are available on the tab:
 
 ### "Parameters" Tab
 #### Common Parameters
+
 | Parameter       | Mandatory | Data Type | Description                                           | Sample |
 | --------------- | :-------- | :-------- | ----------------------------------------------------- | ------ |
 | Reconnect delay | O         | Number    | Specifies delay between reconnection in milliseconds. | 30000  |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                                                | Sample                                  |
 | ----------- | :-------- | :-------- | ---------------------------------------------------------- | --------------------------------------- |
 | Name        | M         | String    | Name of the element.                                       | AsyncAPI Trigger                        |

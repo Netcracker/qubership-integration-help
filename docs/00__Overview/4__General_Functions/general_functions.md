@@ -28,12 +28,15 @@ To open QIP Help:
 
 ## Export/Import
 
-QIP provides an ability to export ![Download|20](img/cloud-download.svg) and import ![Upload|20](img/cloud-upload.svg) different entities. The export function supports both **legacy** and **new** formats for QIP artifacts. Switching between legacy and new format option for export is possible via configuration of specific environment parameter (for the correct parameter name, please, contact system administrator).
+QIP provides an ability to export ![Download|20](img/cloud-download.svg) and import ![Upload|20](img/cloud-upload.svg) different entities.
+The export function supports both **legacy** and **new** formats for QIP artifacts.
+Switching between legacy and new format option for export is possible via configuration of specific environment parameter
+(for the correct parameter name, please, contact system administrator).
 The next set of tables specifies the structure for QIP artifacts in the different supported formats.
 
 <details><summary>Export - New Format</summary>
 
-```
+```text
 Project root (git/SVN root, not included in zip-archive)
 └── chains/                                                                    container for chains [1..1]
     └── {chain-id}/                                                            UUID of the chain [0..N]
@@ -60,7 +63,7 @@ Project root (git/SVN root, not included in zip-archive)
 
 <details><summary>Export - Legacy Format</summary>
 
-```
+```text
 Project root (git/SVN root, not included in zip-archive)
 └── chains/                                                                    container for chains [1..1]
     └── {chain-id}/                                                            UUID of the chain [0..N]

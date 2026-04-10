@@ -60,9 +60,9 @@ Parameters in sections below are either predefined for selected type of service 
 | --------------------- | :-------- | :-------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | topic                 | M         | String    | Name of the topic to use. On the consumer you can use comma to separate multiple topics. A producer can only send a message to a single topic.                                                                       | sample-kafka-topic |
 | maas.classifier.name  | M         | String    | Topic classifier name. Parameter is only available for MaaS connection type.                                                                                                                                        | topic1-classifier  |
-| maas.classifier.namespace                           | O                                       | String                                  | Specifies classifier namespace, that shall be used instead of default one. If left empty, default namespace will be utilized. Only works, when MaaS has a security permission rule to access a different namespace. | newNamespace                                      |
-| maas.classifier.tenantEnabled                       | M                                       | Boolean                                 | Checkbox enables "tenantId" field in classifier.<br>**Default value**: false                                                                                                                                        | false                                             |
-| maas.classifier.tenantId                            | O                                       | String                                  | Specifies tenant unique identifier. If not specified, default value will be used. Only works, when **"maas.classifier.tenantEnabled"** is "true".                                                                   | d334cf82-11aa4vz9-a1a6-ba9f6aa06e09               |
+| maas.classifier.namespace     | O         | String    | Specifies classifier namespace, that shall be used instead of default one. If left empty, default namespace will be utilized. Only works, when MaaS has a security permission rule to access a different namespace. | newNamespace                       |
+| maas.classifier.tenantEnabled | M         | Boolean   | Checkbox enables "tenantId" field in classifier.<br>**Default value**: false                                                                                                                                       | false                              |
+| maas.classifier.tenantId      | O         | String    | Specifies tenant unique identifier. If not specified, default value will be used. Only works, when **"maas.classifier.tenantEnabled"** is "true".                                                                  | d334cf82-11aa4vz9-a1a6-ba9f6aa06e09 |
 
 - gRPC Parameters
 
@@ -109,11 +109,11 @@ query getVehicle {
 
 </details>
 
--  Body
-   Specifies the way of request body formation. Possible values:
-   * **None** - removes the body from the message.
-   * **Inherit** - passes the request body from Camel Exchange as is. Default option.
-   * **multipart/form-data** - utilizes composite content type, built by specifying multiple pair of fields and their values:
+- Body
+  Specifies the way of request body formation. Possible values:
+  * **None** - removes the body from the message.
+  * **Inherit** - passes the request body from Camel Exchange as is. Default option.
+  * **multipart/form-data** - utilizes composite content type, built by specifying multiple pair of fields and their values:
 
 | Parameter | Mandatory | Data Type | Description                                                                                                                       | Sample             |
 | --------- | :-------- | :-------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
@@ -136,37 +136,37 @@ The tab is responsible for choosing an action on receiving the request. Possible
 - **Scripting** - groovy script (specified in the code block) will be executed on request. More additional information available in [Script](../../5__Transformation/1__Script/script.md).
 
     > ℹ️ **Note:** **Some element's details are stored in Camel Exchange properties** and available for usage locally via every "Scripting" module under the Service Call. Such properties (specific ones for the protocol) are listed in the next table (click on the expandable section below):
-    >  <details><summary>Service Call exchange properties</summary>
+    > <details><summary>Service Call exchange properties</summary>
     >
-    >  | Protocol | Property name | Property description |
-    >  | --- | --- | --- |
-    >  | **HTTP** | serviceCallMethod | HTTP method |
-    >  | **HTTP** | serviceCallSkipEmptyQueryParams | Property indicates whether the "Skip empty query parameters" option in Service Call element is checked/unchecked. |
-    >  | **HTTP** | serviceCallUrl | Constructed URL for HTTP call<br><br>ℹ️ **Note:** If **"Skip empty query parameters"** option is checked, any query parameters specified will be excluded from the constructed URL.<br> In case above option is unchecked, all specified query parameters *(including parameters having null/empty values)* will be included in the constructed URL. |
-    >  | **HTTP** | serviceCallAddress | Address part of an URL, resolved from service environment |
-    >  | **HTTP** | serviceCallPath | Path for operation with path parameters placeholders |
-    >  | **HTTP** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_limit*) |
-    >  | **HTTP** | serviceCallPathParameter_<parameter> | Property for each path parameter, where <parameter> substring is a pure path param name (e.g. *serviceCallQueryParameter_orders*) |
-    >  | **HTTP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
-    >  | **Kafka** | serviceCallMethod | AsyncAPI operation method |
-    >  | **Kafka** | serviceCallTopic | Kafka topic name |
-    >  | **Kafka** | serviceCallBrokers | Kafka brokers |
-    >  | **Kafka** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
-    >  | **AMQP** | serviceCallMethod | AsyncAPI operation method |
-    >  | **AMQP** | serviceCallExchange | RabbitMQ exchange name |
-    >  | **AMQP** | serviceCallAddress | Server addresses |
-    >  | **AMQP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
-    >  | **gRPC** | serviceCallMethod | Service method to call |
-    >  | **gRPC** | serviceCallService | Service name |
-    >  | **gRPC** | serviceCallAddress | Server address |
-    >  | **gRPC** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
-    >  | **GraphQL** | serviceCallAddress | Server address |
-    >  | **GraphQL** | serviceCallMethod | HTTP method |
-    >  | **GraphQL** | serviceCallPath | Operation path |
-    >  | **GraphQL** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_operationName*) |
-    >  | **GraphQL** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    > | Protocol | Property name | Property description |
+    > | --- | --- | --- |
+    > | **HTTP** | serviceCallMethod | HTTP method |
+    > | **HTTP** | serviceCallSkipEmptyQueryParams | Property indicates whether the "Skip empty query parameters" option in Service Call element is checked/unchecked. |
+    > | **HTTP** | serviceCallUrl | Constructed URL for HTTP call<br><br>ℹ️ **Note:** If **"Skip empty query parameters"** option is checked, any query parameters specified will be excluded from the constructed URL.<br> In case above option is unchecked, all specified query parameters *(including parameters having null/empty values)* will be included in the constructed URL. |
+    > | **HTTP** | serviceCallAddress | Address part of an URL, resolved from service environment |
+    > | **HTTP** | serviceCallPath | Path for operation with path parameters placeholders |
+    > | **HTTP** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_limit*) |
+    > | **HTTP** | serviceCallPathParameter_<parameter> | Property for each path parameter, where <parameter> substring is a pure path param name (e.g. *serviceCallQueryParameter_orders*) |
+    > | **HTTP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    > | **Kafka** | serviceCallMethod | AsyncAPI operation method |
+    > | **Kafka** | serviceCallTopic | Kafka topic name |
+    > | **Kafka** | serviceCallBrokers | Kafka brokers |
+    > | **Kafka** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    > | **AMQP** | serviceCallMethod | AsyncAPI operation method |
+    > | **AMQP** | serviceCallExchange | RabbitMQ exchange name |
+    > | **AMQP** | serviceCallAddress | Server addresses |
+    > | **AMQP** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    > | **gRPC** | serviceCallMethod | Service method to call |
+    > | **gRPC** | serviceCallService | Service name |
+    > | **gRPC** | serviceCallAddress | Server address |
+    > | **gRPC** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
+    > | **GraphQL** | serviceCallAddress | Server address |
+    > | **GraphQL** | serviceCallMethod | HTTP method |
+    > | **GraphQL** | serviceCallPath | Operation path |
+    > | **GraphQL** | serviceCallQueryParameter_<parameter> | Property for each query parameter, where <parameter> substring is a pure query param name (e.g. *serviceCallQueryParameter_operationName*) |
+    > | **GraphQL** | serviceCallParameter_<parameter> | Property for each additional service call parameter, where <parameter> substring is a pure parameter name (e.g. *serviceCallQueryParameter_connectTimeout*) |
     >
-    >  </details>
+    > </details>
 
 - **Mapping** - specific mapping rules will be applied on request, with no possibility to edit schemes, that come with service call. More additional information available in [Mapper](../../5__Transformation/2__Mapper/mapper.md).
 
@@ -191,7 +191,10 @@ Possible selectable options:
 
 ### "Validations" Tab
 
-This tab allows to set up scheme validation(s) for service's response in order to instantly fail the chain without its further processing in case of receiving invalid response. Validation(s) must be added for specific pair of code and content type, accessed by clicking "**Add**" button. Only codes from range 200-299, which are **properly and fully described** in the response scheme and have **Json** - based content type are available for applying validations against. Validation will only happen for service's response when a pair of HTTP code and content type in response fully matches with the settings, added under Validation tab, otherwise validation will be skipped.
+This tab allows to set up scheme validation(s) for service's response in order to instantly fail the chain without its further processing in case of receiving invalid response.
+Validation(s) must be added for specific pair of code and content type, accessed by clicking "**Add**" button.
+Only codes from range 200-299, which are **properly and fully described** in the response scheme and have **Json** - based content type are available for applying validations against.
+Validation will only happen for service's response when a pair of HTTP code and content type in response fully matches with the settings, added under Validation tab, otherwise validation will be skipped.
 
 ### "Handle Validation Failure" Tab
 
@@ -217,6 +220,7 @@ There is also "**Throw exception on transformation failure**" checkbox available
 The tab is responsible for configuring common Service call parameters.
 
 #### Common Parameters
+
 | Parameter        | Mandatory | Data Type | Description                                                                        | Sample |
 | ---------------- | :-------- | :-------- | ---------------------------------------------------------------------------------- | ------ |
 | Retry count      | M         | Number    | Specifies the number of retries for the call before it is considered to be failed. | 1      |
@@ -231,6 +235,7 @@ The tab is responsible for configuring common Service call parameters.
 | Propagate context       | M         | Boolean   | Checkbox, that defines if context to special ("Technical") headers before sending message will be propagated or not.<ul><li>If **checked** (default): context to this call will be propagated, which will lead to the reinstatement of all technical headers, that are stored in context.</li><li>If **unchecked**: call propagation will be switched off, hence values of technical headers, that are stored in the context won't be reinstated.</li></ul>Additionally, when **"Propagate context"** is checked, **"Override Technical Context Headers"** table becomes available to the user. This table allows to override the value for the specific header, that has been propagated from context. <br><br>ℹ️ **Note:** For the actual list of technical headers, please, contact system administrator. | N/A              |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                                                | Sample                                  |
 | ----------- | :-------- | :-------- | ---------------------------------------------------------- | --------------------------------------- |
 | Name        | M         | String    | Name of the element.                                       | Get Session Status                      |

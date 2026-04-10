@@ -18,7 +18,7 @@ Table with **Context** services is accessible by navigating to **Services** → 
 
 - **Name** - clickable name of the service or specification group. When clicked, system navigates to respective entity.
 - **Protocol** - service's integration protocol. Possible values: **_http, soap, kafka, amqp, graphql, grpc_**. Value for this parameter will be propagated from the firstly imported API specification. There is no ability to upload API specifications with another protocol after that.
-- **Status** - API Specification status. 
+- **Status** - API Specification status.
 - **Source** - specifies the way specification was created. Possible values:
   - **Manual** - uploaded manually.
   - **Discovered** - added as the result of service discovery. This is only applicable to Inner Cloud Services.

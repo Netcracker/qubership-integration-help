@@ -18,9 +18,9 @@ Under the chain it is possible to navigate on "**Deployments**" tab. The followi
 - **Snapshot**: Displays the deployed version (e.g., _V1.2_ ).
 - **Domain**: Shows the selected domain for deployment.
 - **Status**: IP address indicating deployment success or failure via color-coded labels:
-    - ⚫ **_Progressing_** - deployment is in progress. There are engines which haven't received finalized status yet.
-    - 🟢 **_Deployed_** - chain data has been successfully deployed on all requested engines.
-    - 🔴 **_Failed_** - deployment failed on one or multiple engines. Error details are available by hovering the mouse over engine's status.
+  - ⚫ **_Progressing_** - deployment is in progress. There are engines which haven't received finalized status yet.
+  - 🟢 **_Deployed_** - chain data has been successfully deployed on all requested engines.
+  - 🔴 **_Failed_** - deployment failed on one or multiple engines. Error details are available by hovering the mouse over engine's status.
 - **Created By**: The user who initiated the deployment.
 - **Created At**: The exact date and time of deployment.
 - **Actions**: The only available action is **Delete Deployment** marked with ![Delete|20](img/delete.svg), which removes the deployment record (note: this does not affect the deployed chain itself).

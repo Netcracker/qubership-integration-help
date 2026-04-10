@@ -40,7 +40,7 @@
 
 This tab allows setting idempotent behavior in order to avoid processing of the same message by one consumer (especially relevant for Blue-Green deployment approach). The Exchange which has the same idempotency key is regarded as a duplicate. Duplication check is performing on full idempotency key, which has the following structure:
 
-```
+```text
 <idempotency-key> = dupcheck:<context-expression>:<key-expression>
 ```
 

@@ -36,6 +36,7 @@
 | Reconnect delay       | O         | String    | Delay between reconnection attempts in milliseconds.                                                                                                                                                                | 30000                                |
 
 #### Advanced Parameters
+
 | Parameter                            | Mandatory | Data Type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          | Sample                                                   |
 | ------------------------------------ | :-------- | :-------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Consumer blue-green consistency mode | M         | List      | Blue-green specific parameter. Possible values:<li>**EVENTUAL** – consumers offset for candidate during promotion stays the same </li><li>**GUARANTEE_CONSUMPTION** - consumers offset for candidate during promotion is copied from lowest offset for this group of consumers</li><br>**Default value:** EVENTUAL                                                                                                                                   | EVENTUAL                                                 |
@@ -49,6 +50,7 @@
 | maxPollIntervalMs                    | O         | Number    | The maximum delay between batch polls of records from the broker, in milliseconds. If poll is not performed within given time frame, then the consumer is considered to be failed. In case of failure detection, related consumer group will re-balance to reassign the partitions to another consumer in the group. This "new" consumer will process the whole batch all over again.<br>**Default value:** 300000          | 300000                                                   |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                                                | Sample                                                           |
 | ----------- | :-------- | :-------- | ---------------------------------------------------------- | ---------------------------------------------------------------- |
 | Name        | M         | String    | Name of the element.                                       | Kafka Trigger                                                    |
@@ -58,7 +60,7 @@
 
 This tab allows setting idempotent behavior in order to avoid processing of the same message by one consumer (especially relevant for Blue-Green deployment approach). The Exchange which has the same idempotency key is regarded as a duplicate. Duplication check is performing on full idempotency key, which has the following structure:
 
-```
+```text
 <idempotency-key> = dupcheck:<context-expression>:<key-expression>
 ```
 

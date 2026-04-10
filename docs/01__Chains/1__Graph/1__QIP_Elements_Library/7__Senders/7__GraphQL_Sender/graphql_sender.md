@@ -9,10 +9,11 @@
 ---
 ### "Parameters" Tab
 #### Common Parameters
-| Parameter           | Mandatory | Data Type | Description                                                                                                                 | Sample                      |
-| ------------------- | :-------- | :-------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| Enable M2M Security | M         | Boolean   | Specifies whether M2M token should be used to make a query.                                                                 | N/A                         |
-| GraphQL server URI  | M         | String    | GraphQL server URI.                                                                                                         | https://example.com/graphql |
+
+| Parameter           | Mandatory | Data Type | Description                                                                                                                 | Sample                        |
+| ------------------- | :-------- | :-------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Enable M2M Security | M         | Boolean   | Specifies whether M2M token should be used to make a query.                                                                 | N/A                           |
+| GraphQL server URI  | M         | String    | GraphQL server URI.                                                                                                         | `https://example.com/graphql` |
 | Operation Name      | O         | String    | The query or mutation name. Optional if query contains single operation.                                                    | GetTicketById               |
 | Query               | M         | String    | GraphQL query, required to be executed.<br><br>ℹ️ **Note:** More than one query or mutation can be entered at the same time. | N/A                         |
 | Variables JSON      | O         | String    | The JsonObject instance, that contains the operation variables. Camel Exchange variables can also be used.                  | N/A                         |
@@ -53,6 +54,7 @@ query getVehicle {
 | Correlation Id Key           | O         | String    | The exact name of the header or body parameter, that holds correlation id value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | correlationIdKey |
 
 #### Metadata
+
 | Parameter   | Mandatory | Data Type | Description                                                | Sample                              |
 | ----------- | :-------- | :-------- | ---------------------------------------------------------- | ----------------------------------- |
 | Name        | M         | String    | Name of the element.                                       | GrapQL Server                       |

@@ -15,11 +15,12 @@ There are two variable types:
 
 ### Design Time Variables
 
-Variables, that are specified on Admin Tools and referred within a chain via **"\#{"** combination, are considered to be **design time variables**. Hence, when variable's value is updated on Admin Tools ("Variables" section) it won't be automatically picked up during chain execution. To make active chain utilize new design time variable's value, it is required to redeploy the chain or restart engine's pod.
+Variables, that are specified on Admin Tools and referred within a chain via **"\#{"** combination, are considered to be **design time variables**.
+Hence, when variable's value is updated on Admin Tools ("Variables" section) it won't be automatically picked up during chain execution. To make active chain utilize new design time variable's value, it is required to redeploy the chain or restart engine's pod.
 
 Please refer to the syntax sample below for design time variables:
 
-```
+```text
 #{variable_name}
 #{secret_name:variable_name} //only for secured variables, stored in non-default secrets.
 ```
@@ -30,7 +31,7 @@ There is possibility to configure **run time variables**, so the chain will alwa
 
 - For **QIP fields** (where Apache Simple language is being utilized):
 
-  ```
+  ```text
   ${exchangeProperty.variables["variable_name"]}
   ${exchangeProperty.variables["secret_name:variable_name"]} //only for secured variables, stored in non-default secrets.
   ```
@@ -53,7 +54,11 @@ Both variables will be available on Common variables tab in the application.
 
 ### Variables Autocompletion
 
-If variable is configured in Admin Tools, there is no need to remember its exact name when specifying it for a particular field. Simply enter combination of **"#{"** (without quotes) to get a dropdown list with a suggestion and select desired design time variable. When specific fields do not "recognize" such combination, it means that fields do not support operating with them (the only exception is URI field for [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md) and [HTTP Sender](../../01__Chains/1__Graph/1__QIP_Elements_Library/7__Senders/4__HTTP_Sender/http_sender.md), please read respective articles for more details).
+If variable is configured in Admin Tools, there is no need to remember its exact name when specifying it for a particular field.
+Simply enter combination of **"#{"** (without quotes) to get a dropdown list with a suggestion and select desired design time variable.
+When specific fields do not "recognize" such combination, it means that fields do not support operating with them
+(the only exception is URI field for [HTTP Trigger](../../01__Chains/1__Graph/1__QIP_Elements_Library/6__Triggers/1__HTTP_Trigger/http_trigger.md)
+and [HTTP Sender](../../01__Chains/1__Graph/1__QIP_Elements_Library/7__Senders/4__HTTP_Sender/http_sender.md), please read respective articles for more details).
 
 > ℹ️ **Note:** For **common variables used in design time mode** there is no need to remember its value or check it on dedicated UI page. **Just hover the mouse on variable name and the value will appear on the screen**.
 
@@ -65,30 +70,30 @@ If variable is configured in Admin Tools, there is no need to remember its exact
 After navigation to "Variables" tab, the table with common variables will be initially showed, where next information and control elements are presented:
 
 - **Key** - non-editable name of the variable. When column is clicked, there is a menu with next options available:
-	- **Sort by Ascending** (Default);
-	- **Sort by Descending**;
-	- **Sort by Default**;
-	- **Add Filter**.
+  - **Sort by Ascending** (Default);
+  - **Sort by Descending**;
+  - **Sort by Default**;
+  - **Add Filter**.
 - **Value** - editable variable's value. When column is clicked, the same options are available.
 - **Control panel** - panel, placed on the right top. Provides next capabilities:
-	- ![Delete|20](img/delete.svg) - deletes the variable(s), selected via checkbox.
-	- ![Download|20](img/cloud-download.svg) - exports variables, selected via checkbox. If no specific variables were selected before clicking, then system will export all of them at once.
-	- ![Upload|20](img/cloud-upload.svg) - opens pop-up, that allows to import variables.
-	- ![Plus|20](img/plus.svg) - allows to add a new variable to the table.
+  - ![Delete|20](img/delete.svg) - deletes the variable(s), selected via checkbox.
+  - ![Download|20](img/cloud-download.svg) - exports variables, selected via checkbox. If no specific variables were selected before clicking, then system will export all of them at once.
+  - ![Upload|20](img/cloud-upload.svg) - opens pop-up, that allows to import variables.
+  - ![Plus|20](img/plus.svg) - allows to add a new variable to the table.
 
 ### View Secured Variables
 
 Click "**Secured**" sub-tab in the menu on the right to open secured variables table, where next information and control elements are presented:
 
 * **Secret** - name of the secret. Under each secret secured variables can be created.
-	- **Key** - non-editable name of the variable or secret. Default secret will also be marked with (Default) identifier. When column is clicked, there is a menu with next options available:
-		- **Sort by Ascending** (Default)
-		- **Sort by Descending**
-		 - **Add Filter**
-	- **Value** - editable variable's value, masked with dots.
+  - **Key** - non-editable name of the variable or secret. Default secret will also be marked with (Default) identifier. When column is clicked, there is a menu with next options available:
+    - **Sort by Ascending** (Default)
+    - **Sort by Descending**
+    - **Add Filter**
+  - **Value** - editable variable's value, masked with dots.
 - **Control panel** - panel, placed on the right top of the table. Provides next capabilities:
-	- ![Delete|20](img/delete.svg) - deletes the variable(s), selected via checkbox.
-	- ![Plus|20](img/plus.svg) - allows to create a new secret.
+  - ![Delete|20](img/delete.svg) - deletes the variable(s), selected via checkbox.
+  - ![Plus|20](img/plus.svg) - allows to create a new secret.
 
 Under each secret the following actions can be applied:
 * ![Download|20](img/cloud-download.svg) - Export secret as Helm Chart.
@@ -96,7 +101,8 @@ Under each secret the following actions can be applied:
 
 ### Create Secret
 
-To create a secret, which represents a **secured storage object in Kubernetes**, click "**Add Secret**" button marked with ![Plus|20](img/plus.svg), specify the name and confirm operation with "**Create**" button. As the result of this operation, there will be new Secret created with a given name in Kubernetes. Secret's name must be specified in lower case, start with a letter and contain no special symbols besides "-", which could be used as a delimiter.
+To create a secret, which represents a **secured storage object in Kubernetes**, click "**Add Secret**" button marked with ![Plus|20](img/plus.svg), specify the name and confirm operation with "**Create**" button.
+As the result of this operation, there will be new Secret created with a given name in Kubernetes. Secret's name must be specified in lower case, start with a letter and contain no special symbols besides "-", which could be used as a delimiter.
 
 > ⚠️ **Warning:** Never **ever** attempt to override or re-create secret with the name "*qip-secured-variables-v2*", as it is reserved for **default** secret name. Any improper actions with default secret may lead to data corruption or system malfunction.
 
