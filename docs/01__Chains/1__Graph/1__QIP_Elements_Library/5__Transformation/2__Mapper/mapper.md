@@ -282,19 +282,19 @@ The table below contains description of possible connection pairs, that could be
 >   * Source field, that has a default value is not nested in array and has string, number or boolean type.
 > * When one XML object is being mapped to another one, it is required to **manually** specify namespaces on the target object if required, as they won't be mapped automatically.
 
-| Source Field | Target Field | Conversion |
-| --- | --- | --- |
-| Primitive(s) | Primitive | See primitive conversion rules below this table. |
-| Array of Primitives | Primitive | Single primitive: **"Primitive to Primitive"** rules apply. Multiple: last value is used. |
-| Array's field (Primitive) | Primitive | If target is not in array, last value is used. If target is in array, each value maps to a new field. |
-| Primitive(s) | Array of Primitives | Source value(s) converted to array. Same conversion as **"Primitive to Primitive"**. |
-| Array's field (Primitives) | Array of Primitives | Each value placed in array per **"Primitive to Primitive"** rules. Count matches source array size. |
-| Array of Primitives | Array of Primitives | All source values placed in target array per **"Primitive to Primitive"** rules. |
-| Object | Object | Target gets values for matching name/position. See object mapping notes below this table. |
-| Object(s) | Array of Objects | Each source object mapped to array's object per **Object to Object** logic. |
-| Array of Objects | Array of Objects | Each object from source array mapped to target array per **Object to Object** logic. |
-| Array of Primitives | Array's field (Primitives) | Creates objects per source value count; maps each value to a new object in order. |
-| Constant | Any type | Map constant to target with specified type. See constant details below this table. |
+| Source Field               | Target Field               | Conversion                                                                                            |
+| -------------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Primitive(s)               | Primitive                  | See primitive conversion rules below this table.                                                      |
+| Array of Primitives        | Primitive                  | Single primitive: **"Primitive to Primitive"** rules apply. Multiple: last value is used.             |
+| Array's field (Primitive)  | Primitive                  | If target is not in array, last value is used. If target is in array, each value maps to a new field. |
+| Primitive(s)               | Array of Primitives        | Source value(s) converted to array. Same conversion as **"Primitive to Primitive"**.                  |
+| Array's field (Primitives) | Array of Primitives        | Each value placed in array per **"Primitive to Primitive"** rules. Count matches source array size.   |
+| Array of Primitives        | Array of Primitives        | All source values placed in target array per **"Primitive to Primitive"** rules.                      |
+| Object                     | Object                     | Target gets values for matching name/position. See object mapping notes below this table.             |
+| Object(s)                  | Array of Objects           | Each source object mapped to array's object per **Object to Object** logic.                           |
+| Array of Objects           | Array of Objects           | Each object from source array mapped to target array per **Object to Object** logic.                  |
+| Array of Primitives        | Array's field (Primitives) | Creates objects per source value count; maps each value to a new object in order.                     |
+| Constant                   | Any type                   | Map constant to target with specified type. See constant details below this table.                    |
 
 **Primitive to Primitive conversion rules:**
 
