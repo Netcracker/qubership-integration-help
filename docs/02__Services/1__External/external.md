@@ -15,7 +15,7 @@ Services, located outside of environment are called **External Services**. To in
 
 ### View External Services
 
-> 🚫 This functionality is not available via the VS Code Extension.
+> ⛔️ This functionality is not available via the VS Code Extension.
 
 Table with External services is accessible by navigating to **Services** → **External** tab. Next columns and elements are available for the table:
 
@@ -155,7 +155,7 @@ When specification is clicked, system opens new page with the table of available
 
 ### Add External Service
 
-> 🚫 This functionality is not available via the VS Code Extension.
+> ⛔️ This functionality is not available via the VS Code Extension.
 
 To add new external service, click **"Create service"** button marked with ![Plus|20](img/plus.svg)  at the top right of the screen. Specify service name and description on a newly opened pop-up and click "**Create**" button. System opens new window with three tabs:
 - **Parameters**
@@ -273,7 +273,7 @@ To switch the environment, click the radio button near appropriate environment c
 
 ### Import Service(s)
 
-> 🚫 This functionality is not available via the VS Code Extension.
+> ⛔️ This functionality is not available via the VS Code Extension.
 
 To import the service(s), click the icon ![Upload|20](img/cloud-upload.svg), drag and drop **.zip** file into import area
 or click **"browse"** link and select **single** file with respective format from the explorer menu.
@@ -314,7 +314,7 @@ When import is completed, system displays import result table with the following
 
 ### Export Service(s)
 
-> 🚫 This functionality is not available via the VS Code Extension.
+> ⛔️ This functionality is not available via the VS Code Extension.
 
 System allows to export service with all its API specifications, environments and sources. From **"External Services"** page - mark specific services with checkboxes and click ![Download|20](img/cloud-download.svg) **Export**. Or simply click this button to export all services at once after confirmation.
 

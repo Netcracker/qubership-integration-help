@@ -1,6 +1,6 @@
 # Variables (Web UI only)
 
-> 🚫 This functionality is not available via the VS Code Extension.
+> ⛔️ This functionality is not available via the VS Code Extension.
 
 ## Description
 
