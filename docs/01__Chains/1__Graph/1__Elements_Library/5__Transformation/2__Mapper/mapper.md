@@ -130,7 +130,7 @@ Supported formats and data:
 > * Every input sample or scheme is going to be transformed to the JSON schema as the result. Final message is being built on the basis of resulted scheme.
 > * Mapper supports oneOf, allOf and anyOf schemes, but they shall be properly loaded. Click on expandable section below to see the sample of proper schema
 
-<details><summary>**JSON schema sample**</summary>
+<details><summary>JSON schema sample</summary>
 
 ```json
 {
