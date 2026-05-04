@@ -207,6 +207,20 @@ Supported formats and data:
 
 </details>
 
+
+>ℹ️ **Note:** 
+>**Schema Change Handling**
+>
+> When the source or target schema is updated, the Mapper does not overwrite existing mappings.
+> 
+> Instead, it reconciles changes:
+> - Existing mappings are preserved if fields remain unchanged.
+> - New fields are added but not mapped automatically.
+> - Removed or incompatible fields may break mappings and require manual fixes.
+> - Renamed fields are treated as new and must be re-mapped.
+> 
+> This ensures that schema updates do not unexpectedly reset user configurations.
+
 #### Edit Body Structure
 There are control buttons, available under (![20](img/more.svg)) expandable menu in **Graph View**. This menu becomes visible after hovering the mouse on the desirable attribute. For **Table View** access control buttons with similar functionality exist and they are hidden by default. To display the buttons, hover the mouse on desired attribute or attribute value for its modification.
 
